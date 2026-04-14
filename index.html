@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Damas &amp; Lima — Green Card para Profissionais Qualificados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Neulis Alt';
+      src: local('Neulis Alt'), local('NeulisAlt'), local('Neulis-Alt');
+      font-display: swap;
+    }
+
+    /* ===========================================
+       RESET
+    =========================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #1b0204;
+      color: #ebebeb;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; }
+    a   { text-decoration: none; color: inherit; }
+
+    /* ===========================================
+       DESIGN TOKENS
+    =========================================== */
+    :root {
+      --bg:          #1b0204;
+      --bg-alt:      #140102;
+      --bg-card:     rgba(255,255,255,0.04);
+      --text:        #ebebeb;
+      --muted:       rgba(242, 242, 242, 0.62);
+      --green:       #aeff00;
+      --gold:        #e9d9a4;
+      --gold-dk:     #d9b182;
+      --gold-lt:     #e9d9a5;
+      --red:         #ff4040;
+      --border:      rgba(255,255,255,0.08);
+      --border-gold: rgba(233,217,164,0.22);
+      --w:           1200px;   /* max content width  */
+      --sp:          80px;     /* section padding    */
+      --sp-m:        48px;     /* section pad mobile */
+      --rad:         12px;     /* border-radius std  */
+    }
+
+    /* ===========================================
+       LAYOUT
+    =========================================== */
+    .wrap {
+      width: 100%;
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+    .section     { padding: var(--sp) 0; background: var(--bg); }
+    .section-alt { background: var(--bg-alt); }
+
+    /* ===========================================
+       TYPOGRAPHY SCALE
+    =========================================== */
+    /* Gradiente prateado — reutilizado por títulos */
+    .silver-gradient {
+      background: linear-gradient(104deg, #e8e8e8 0%, #a8a8a8 25%, #f0f0f0 50%, #a0a0a0 75%, #e0e0e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hl {
+      font-family: 'Neulis Alt', 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      line-height: 1.1;
+      background: linear-gradient(104deg, #e8e8e8 0%, #a8a8a8 25%, #f0f0f0 50%, #a0a0a0 75%, #e0e0e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hl-64 { font-size: 64px; }
+    .hl-52 { font-size: 52px; }
+    .hl-44 { font-size: 44px; }
+    .hl-36 { font-size: 36px; }
+
+    .accent-green { color: var(--green); -webkit-text-fill-color: var(--green); }
+    .accent-gold  { color: var(--gold);  -webkit-text-fill-color: var(--gold);  }
+
+    /* Subtítulo importante — Schibsted Grotesk */
+    .subtitle {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    /* Subtítulo menos importante — Inter light */
+    .subtitle-minor {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    /* ===========================================
+       SHARED COMPONENTS
+    =========================================== */
+
+    /* Label chip */
+    .label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-dk);
+      margin-bottom: 24px;
+    }
+
+    /* Card */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 32px 36px;
+    }
+    .card-gold  { border-color: var(--border-gold); }
+    .card-red   { background: rgba(255,64,64,.05);  border-color: rgba(255,64,64,.22); }
+    .card-green { background: rgba(174,255,0,.04);  border-color: rgba(174,255,0,.22); }
+
+    /* Primary CTA — gold gradient */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 600;
+      font-style: italic;
+      font-size: 20px;
+      padding: 16px 28px;
+      border-radius: var(--rad);
+      cursor: pointer;
+      transition: transform .18s, box-shadow .18s, opacity .18s;
+      border: none;
+    }
+    .btn-gold {
+      background: linear-gradient(90deg, var(--gold-dk), var(--gold-lt));
+      color: var(--bg);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px) scale(1.015);
+      box-shadow: 0 8px 32px rgba(217,177,130,.35);
+    }
+
+    /* WhatsApp CTA */
+    .btn-wa {
+      background: #25D366;
+      color: #fff;
+      font-style: normal;
+      font-size: 20px;
+    }
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37,211,102,.3);
+    }
+
+    /* Micro filter */
+    .micro-filter {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(235,235,235,.6);
+    }
+    .micro-filter::before {
+      content: '';
+      flex-shrink: 0;
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,.3);
+    }
+
+    /* Check / X rows */
+    .row-check, .row-x {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+    .row-check .ic { color: var(--green); flex-shrink: 0; margin-top: 1px; }
+    .row-x     .ic { color: var(--red);   flex-shrink: 0; margin-top: 1px; }
+
+    /* Column list */
+    .col-list { display: flex; flex-direction: column; gap: 16px; }
+
+    /* ===========================================
+       1 — HERO
+    =========================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+
+      background-image: url('desktop.jpg');
+      background-size: contain;
+      background-position: right top;
+      background-repeat: no-repeat;
+    }
+
+
+    /* Fade inferior — integra a foto com as seções abaixo */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 35%;
+      background: linear-gradient(to top, #1b0204 15%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      padding: 100px 80px;
+      max-width: 790px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .hero__logo {
+      height: 80px;
+      width: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero__headline {
+      font-family: 'Neulis Alt', 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 58px;
+      line-height: 1.08;
+      background: linear-gradient(104deg, #e8e8e8 0%, #a8a8a8 25%, #f0f0f0 50%, #a0a0a0 75%, #e0e0e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero__sub {
+      font-size: 20px;
+      line-height: 1.65;
+      color: rgba(235,235,235,.88);
+      max-width: 560px;
+    }
+    .hero__sub strong {
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .hero__proof {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(235,235,235,.72);
+      max-width: 500px;
+      line-height: 1.6;
+    }
+    .hero__proof strong { font-weight: 500; color: var(--text); }
+
+    .hero__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    /* ===========================================
+       2 — REALIDADE
+    =========================================== */
+    .reality-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .reality-intro { font-size: 18px; color: var(--muted); margin-top: 14px; }
+
+    .mistakes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .mistake-card { padding: 28px 24px; }
+    .mistake-icon { font-size: 20px; color: var(--red); margin-bottom: 14px; }
+    .mistake-text { font-size: 17px; line-height: 1.55; color: var(--text); }
+
+    .consequence-box { margin-bottom: 32px; }
+    .consequence-box .label { color: var(--red); }
+    .consequence-list {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .consequence-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .consequence-item .x { color: var(--red); }
+
+    .turn-box { margin-bottom: 40px; }
+    .turn-box .label { color: var(--green); }
+    .turn-text {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .turn-text em { color: var(--green); font-style: normal; }
+
+    .reality-closing {
+      font-size: 19px;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 40px;
+    }
+    .reality-closing strong { color: var(--gold); font-weight: 600; }
+
+    /* ===========================================
+       3 — OPORTUNIDADE
+    =========================================== */
+    .opp-inner { max-width: 820px; }
+    .opp-body {
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .opp-body p + p { margin-top: 14px; }
+    .opp-body strong { color: var(--text); font-weight: 600; }
+
+    .no-list { display: flex; flex-direction: column; gap: 8px; margin: 28px 0 36px; }
+    .no-item {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .no-item::before { content: '— '; color: var(--gold-dk); }
+
+    .counterpoint { padding: 28px 36px; }
+    .counterpoint p { font-size: 19px; line-height: 1.65; color: var(--muted); }
+    .counterpoint strong { color: var(--gold); font-weight: 600; }
+
+    /* ===========================================
+       4 — MECANISMO
+    =========================================== */
+    .mech-intro {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 44px;
+      line-height: 1.7;
+    }
+    .mech-intro em { color: var(--text); font-style: normal; font-weight: 600; }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .pillar { display: flex; align-items: flex-start; gap: 14px; padding: 24px 28px; }
+    .pillar-check { color: var(--green); font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .pillar-text  { font-size: 17px; font-weight: 500; line-height: 1.5; }
+
+    .mech-closing {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      line-height: 1.4;
+    }
+    .mech-closing em { color: var(--gold); font-style: normal; }
+
+    /* ===========================================
+       5 — PREMIUM
+    =========================================== */
+    .premium-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .premium-body {
+      font-size: 20px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+    .premium-amount {
+      display: block;
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 60px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1.15;
+      margin: 12px 0;
+    }
+    .premium-close {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      margin-top: 36px;
+    }
+    .premium-close em { color: var(--green); font-style: normal; }
+
+    /* ===========================================
+       6 — OBJEÇÃO
+    =========================================== */
+    .obj-header { text-align: center; margin-bottom: 52px; }
+    .obj-intro  { font-size: 18px; color: var(--muted); margin-top: 14px; }
+
+    .obj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .obj-col { padding: 32px 28px; }
+    .obj-col-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .card-red  .obj-col-title { color: var(--red); }
+    .card-green .obj-col-title { color: var(--green); }
+
+    .obj-reality { margin-bottom: 40px; }
+    .obj-reality p { font-size: 19px; color: var(--muted); line-height: 1.75; }
+    .obj-reality p + p { margin-top: 14px; }
+    .obj-reality strong { color: var(--text); }
+
+    /* ===========================================
+       7 — PROVA
+    =========================================== */
+    .proof-inner { max-width: 820px; }
+    .proof-card p {
+      font-size: 19px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .proof-example {
+      border-left: 3px solid var(--gold-dk);
+      padding: 20px 24px;
+      background: rgba(233,217,164,.04);
+      border-radius: 0 8px 8px 0;
+    }
+    .proof-example p {
+      font-size: 17px;
+      font-style: italic;
+      margin: 0;
+    }
+    .proof-example strong { color: var(--gold); font-style: normal; font-weight: 600; }
+
+    /* ===========================================
+       8 — CTA PRINCIPAL
+    =========================================== */
+    .cta-section {
+      background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+      padding: var(--sp) 0;
+    }
+    .cta-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .cta-sub {
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      line-height: 1.65;
+    }
+    .cta-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+      margin-bottom: 40px;
+      padding: 32px 36px;
+    }
+    .benefit { font-size: 18px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+    .benefit .ic { color: var(--green); }
+
+    /* ===========================================
+       9 — URGÊNCIA + FOOTER
+    =========================================== */
+    .urgency {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: 56px 0;
+      text-align: center;
+    }
+    .urgency-text {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 10px;
+      line-height: 1.7;
+    }
+    .urgency-text strong { color: var(--text); }
+    .urgency-cta { margin-top: 36px; }
+
+    .footer {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-logo  { height: 40px; width: auto; object-fit: contain; }
+    .footer-copy  { font-size: 13px; color: rgba(235,235,235,.32); }
+
+    /* ===========================================
+       RESPONSIVE — TABLET ≤ 1023px
+    =========================================== */
+    @media (max-width: 1023px) {
+      :root { --sp: 64px; }
+      .wrap { padding: 0 40px; }
+
+      .hero {
+        background-image: url('tablet.png');
+        background-position: center top;
+      }
+      .hero__content  { padding: 80px 40px; max-width: 100%; }
+      .hero__headline { font-size: 48px; }
+      .hero__sub      { font-size: 17px; }
+
+      .mistakes-grid { grid-template-columns: 1fr; gap: 12px; }
+      .pillars       { grid-template-columns: 1fr; }
+      .obj-grid      { grid-template-columns: 1fr; }
+
+      .hl-64 { font-size: 46px; }
+      .hl-52 { font-size: 38px; }
+      .hl-44 { font-size: 32px; }
+      .hl-36 { font-size: 28px; }
+      .premium-amount { font-size: 48px; }
+    }
+
+    /* ===========================================
+       RESPONSIVE — MOBILE ≤ 767px
+    =========================================== */
+    @media (max-width: 767px) {
+       /* Primary CTA — gold gradient */
+
+      :root { --sp: var(--sp-m); }
+      .wrap { padding: 0 24px; }
+
+      /* Hero mobile */
+      .hero {
+        background-image: url('mobile.jpg');
+        background-position: center top;
+        background-size: cover; 
+        align-items: flex-end;
+      }
+
+      /* Overlay mais intenso no mobile para legibilidade */
+      .hero::before {
+        background: linear-gradient(
+          to top,
+          rgba(27,2,4,.98) 0%,
+          rgba(27,2,4,.85) 40%,
+          rgba(27,2,4,.55) 70%,
+          transparent 100%
+        );
+      }
+      .hero::after {
+        height: 50%;
+        background: linear-gradient(to top, #1b0204 25%, transparent 100%);
+      }
+
+      .hero__content {
+        padding: 48px 24px 56px;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+      }
+      .hero__logo    { margin: 0 auto; }
+      .hero__headline { font-size: 34px; }
+      .hero__sub      { font-size: 16px; max-width: 100%; }
+      .hero__proof    { font-size: 14px; max-width: 100%; }
+
+      .hero__actions  { align-items: center; width: 100%; }
+      .btn-gold       { width: 100%; font-size: 17px; padding: 16px 20px; }
+      .micro-filter   { justify-content: center; font-size: 13px; }
+
+      /* Typography */
+      .hl-64 { font-size: 30px; }
+      .hl-52 { font-size: 26px; }
+      .hl-44 { font-size: 24px; }
+      .hl-36 { font-size: 22px; }
+
+      .no-item        { font-size: 22px; }
+      .turn-text      { font-size: 22px; }
+      .premium-amount { font-size: 40px; }
+      .premium-close  { font-size: 18px; }
+      .mech-closing   { font-size: 20px; }
+
+      /* Buttons */
+      .btn-wa { font-size: 17px; padding: 16px 20px; width: 100%; }
+
+      /* Cards */
+      .card { padding: 24px 20px; }
+
+      /* Consequence list */
+      .consequence-list { flex-direction: column; gap: 12px; }
+
+      /* Footer */
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       1. HERO
+  ========================================== -->
+  <section class="hero">
+    <div class="hero__content">
+
+      <img
+        class="hero__logo"
+        src="logo.svg"
+        alt="Damas &amp; Lima Internacional"
+      >
+
+      <h1 class="hero__headline">
+        Quer conquistar o&nbsp;<span class="accent-green">Green Card</span>
+        e morar legalmente nos EUA?
+      </h1>
+
+      <p class="hero__sub">
+        Descubra se o seu perfil realmente tem chances de aprovação antes de
+        investir mais de <strong>R$100 mil</strong> em um processo que pode ser negado.
+      </p>
+
+      <p class="hero__proof">
+        Não é para <strong>todos</strong>. A maioria dos brasileiros é negada
+        por escolher o <strong>caminho errado</strong>.
+      </p>
+
+      <div class="hero__actions">
+        <!-- ⚠️ Substitua 55XXXXXXXXXX pelo número WhatsApp (ex: 5511999999999) -->
+        <a href="https://wa.me/55XXXXXXXXXX" class="btn btn-gold" target="_blank" rel="noopener">
+          Quero saber se tenho perfil para o Green Card
+        </a>
+        <span class="micro-filter">
+          Para profissionais com carreira estruturada e capacidade de investimento.
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       2. REALIDADE
+  ========================================== -->
+  <section class="section section-alt">
+    <div class="wrap">
+
+      <div class="reality-header">
+        <h2 class="hl hl-44">
+          A verdade que ninguém te conta sobre o <span class="accent-green">Green Card</span>
+        </h2>
+        <p class="reality-intro">A maioria dos brasileiros erra antes mesmo de começar.</p>
+      </div>
+
+      <div class="mistakes-grid">
+        <div class="card mistake-card">
+          <div class="mistake-icon">✗</div>
+          <p class="mistake-text">Tentam encaixar o perfil em qualquer processo disponível.</p>
+        </div>
+        <div class="card mistake-card">
+          <div class="mistake-icon">✗</div>
+          <p class="mistake-text">Acreditam em promessas de "aprovação fácil" sem análise real.</p>
+        </div>
+        <div class="card mistake-card">
+          <div class="mistake-icon">✗</div>
+          <p class="mistake-text">Começam sem entender o nível de exigência do processo.</p>
+        </div>
+      </div>
+
+      <div class="card card-red consequence-box">
+        <p class="label" style="color:var(--red)">Consequência</p>
+        <div class="consequence-list">
+          <div class="consequence-item"><span class="x">✗</span> Processos negados</div>
+          <div class="consequence-item"><span class="x">✗</span> Anos perdidos</div>
+          <div class="consequence-item"><span class="x">✗</span> Mais de R$100 mil jogados fora</div>
+        </div>
+      </div>
+
+      <div style="height:16px"></div>
+
+      <div class="card card-green turn-box">
+        <p class="label" style="color:var(--green)">A Virada</p>
+        <p class="turn-text">
+          O problema não é falta de oportunidade.<br>
+          É falta de <em>estratégia</em>.
+        </p>
+      </div>
+
+      <p class="reality-closing">
+        Aqui, o caminho é o oposto:
+        <strong>antes de falar em aplicação, analisamos se o seu perfil realmente sustenta o processo.</strong>
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       3. OPORTUNIDADE
+  ========================================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="opp-inner">
+
+        <h2 class="hl hl-52" style="margin-bottom:36px">
+          Green Card não é sorte. É <span class="accent-green">estratégia</span>.
+        </h2>
+
+        <div class="opp-body">
+          <p>Existem diferentes caminhos para conseguir o Green Card e cada um exige um tipo de perfil.</p>
+          <p><strong>Escolher errado custa tempo, dinheiro e a chance de aprovação.</strong></p>
+          <p>Nosso trabalho é identificar exatamente onde você se encaixa e estruturar o processo com base em critérios reais.</p>
+        </div>
+
+        <div class="no-list">
+          <p class="no-item">Sem tentativa.</p>
+          <p class="no-item">Sem promessa vazia.</p>
+          <p class="no-item">Sem improviso.</p>
+        </div>
+
+        <div class="card card-gold counterpoint">
+          <p>Mas não é para qualquer perfil.
+            <strong>E é exatamente por isso que precisa ser feito com estratégia.</strong></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       4. MECANISMO
+  ========================================== -->
+  <section class="section section-alt">
+    <div class="wrap">
+
+      <h2 class="hl hl-52" style="margin-bottom:20px">
+        Não analisamos o visto.<br>Analisamos o <span class="accent-green">seu caso</span>.
+      </h2>
+
+      <p class="mech-intro">
+        Enquanto muitos tentam encaixar clientes em processos…
+        <em>Nós fazemos o contrário.</em>
+      </p>
+
+      <div class="pillars">
+        <div class="card pillar">
+          <span class="pillar-check">✔</span>
+          <p class="pillar-text">Avaliação estratégica antes de qualquer decisão</p>
+        </div>
+        <div class="card pillar">
+          <span class="pillar-check">✔</span>
+          <p class="pillar-text">Seleção criteriosa de casos nem todos seguem</p>
+        </div>
+        <div class="card pillar">
+          <span class="pillar-check">✔</span>
+          <p class="pillar-text">Construção técnica robusta do processo</p>
+        </div>
+        <div class="card pillar">
+          <span class="pillar-check">✔</span>
+          <p class="pillar-text">Atuação alinhada entre exigências do Brasil e dos EUA</p>
+        </div>
+      </div>
+
+      <p class="mech-closing">
+        Só avançamos quando existe base real. <em>Sem improviso. Sem aposta.</em>
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       5. POSICIONAMENTO PREMIUM
+  ========================================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="premium-inner">
+
+        <p class="label" style="display:block;text-align:center">Posicionamento</p>
+
+        <p class="premium-body">
+          Este não é um processo barato.<br>
+          E não deve ser tratado como uma tentativa.<br>
+          Hoje, um processo bem estruturado pode ultrapassar
+          <span class="premium-amount">US$ 20.000</span>
+          de investimento.
+        </p>
+
+        <p class="premium-close">
+          Por isso, a decisão mais importante não é aplicar.<br>
+          É <em>saber se faz sentido aplicar</em>.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       6. OBJEÇÃO
+  ========================================== -->
+  <section class="section section-alt">
+    <div class="wrap">
+
+      <div class="obj-header">
+        <h2 class="hl hl-44">
+          Se você desconfia… <span class="accent-green">está certo</span>.
+        </h2>
+        <p class="obj-intro">O mercado de imigração está cheio de promessas irreais.</p>
+      </div>
+
+      <div class="obj-grid">
+        <div class="card card-red obj-col">
+          <p class="obj-col-title">O que prometem</p>
+          <div class="col-list">
+            <div class="row-x"><span class="ic">✗</span> "Aprovação garantida"</div>
+            <div class="row-x"><span class="ic">✗</span> "Processo fácil"</div>
+            <div class="row-x"><span class="ic">✗</span> "Qualquer perfil consegue"</div>
+          </div>
+        </div>
+        <div class="card card-green obj-col">
+          <p class="obj-col-title">Nossa abordagem</p>
+          <div class="col-list">
+            <div class="row-check"><span class="ic">✔</span> Análise técnica real de cada caso</div>
+            <div class="row-check"><span class="ic">✔</span> Transparência sobre viabilidade</div>
+            <div class="row-check"><span class="ic">✔</span> Só avançamos com base sólida</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card obj-reality">
+        <p>A realidade é outra: <strong>cada caso depende de critérios técnicos, documentação e estratégia.</strong></p>
+        <p>Nosso trabalho não é prometer aprovação. É evitar que você entre no <strong>processo errado</strong>.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       7. PROVA
+  ========================================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="proof-inner">
+
+        <p class="label">Atuação</p>
+        <h2 class="hl hl-36" style="margin-bottom:36px;max-width:640px">
+          Resultados construídos com base em estratégia, não em sorte.
+        </h2>
+
+        <div class="card card-gold proof-card">
+          <p>
+            Atuamos na análise e condução de processos de imigração qualificada
+            para profissionais com trajetória consolidada.
+          </p>
+          <div class="proof-example">
+            <p>
+              Já acompanhamos casos de clientes que
+              <strong>não tinham experiência internacional</strong>  mas conseguiram
+              estruturar um processo sólido com base na carreira construída no Brasil.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       8. CTA PRINCIPAL
+  ========================================== -->
+  <section class="cta-section">
+    <div class="wrap">
+      <div class="cta-inner">
+
+        <h2 class="hl hl-44" style="margin-bottom:18px">
+          Descubra se o seu perfil sustenta um processo de imigração
+        </h2>
+
+        <p class="cta-sub">
+          Você não precisa iniciar um processo agora.<br>
+          Mas precisa evitar começar errado.
+        </p>
+
+        <div class="card cta-benefits">
+          <div class="benefit"><span class="ic">✔</span> Análise inicial do seu perfil</div>
+          <div class="benefit"><span class="ic">✔</span> Direcionamento estratégico</div>
+          <div class="benefit"><span class="ic">✔</span> Clareza sobre viabilidade real</div>
+        </div>
+
+        <!-- ⚠️ Substitua 55XXXXXXXXXX pelo número WhatsApp (ex: 5511999999999) -->
+        <a href="https://wa.me/55XXXXXXXXXX" class="btn btn-wa" target="_blank" rel="noopener">
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Falar com um especialista agora no WhatsApp
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       9. URGÊNCIA + FOOTER
+  ========================================== -->
+  <div class="urgency">
+    <div class="wrap">
+      <p class="urgency-text">
+        <strong>Devido ao nível técnico das análises, nem todos os perfis são atendidos imediatamente.</strong>
+      </p>
+      <p class="urgency-text">
+        Solicite sua análise agora e garanta sua posição na fila de avaliações.
+      </p>
+      <div class="urgency-cta">
+        <!-- ⚠️ Substitua 55XXXXXXXXXX pelo número WhatsApp (ex: 5511999999999) -->
+        <a href="https://wa.me/55XXXXXXXXXX" class="btn btn-gold" target="_blank" rel="noopener">
+          Quero saber se tenho perfil para o Green Card
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <img
+          class="footer-logo"
+          src="logo.svg"
+          alt="Damas &amp; Lima Internacional"
+        >
+        <p class="footer-copy">© 2025 Damas &amp; Lima Advogados. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
