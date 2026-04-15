@@ -485,6 +485,133 @@
     .proof-example strong { color: var(--gold); font-style: normal; font-weight: 600; }
 
     /* ===========================================
+       GOOGLE REVIEWS WIDGET
+    =========================================== */
+    .grw-section { margin-top: 56px; max-width: var(--w); }
+    .google-reviews-widget {
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+      width: 100%;
+      --grw-bg:       rgba(255,255,255,0.04);
+      --grw-text:     #ebebeb;
+      --grw-text-mut: rgba(242,242,242,0.55);
+      --grw-border:   rgba(255,255,255,0.08);
+      --grw-shadow:   0 4px 20px rgba(0,0,0,0.25);
+    }
+    .google-reviews-widget * { box-sizing: border-box; }
+    .grw-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--grw-border);
+    }
+    .grw-header-info h3 { margin: 0; font-size: 1.1rem; font-weight: 600; color: var(--grw-text); }
+    .grw-header-info p  { margin: 4px 0 0; color: var(--grw-text-mut); font-size: 0.875rem; }
+    .grw-google-icon    { width: 22px; height: 22px; flex-shrink: 0; }
+    .grw-card {
+      background: var(--grw-bg);
+      border: 1px solid var(--grw-border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: var(--grw-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .grw-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    .grw-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .grw-author img {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .grw-author-meta { flex: 1; }
+    .grw-author-meta strong { display: block; font-size: 0.9rem; color: var(--grw-text); }
+    .grw-author-meta span   { display: block; font-size: 0.78rem; color: var(--grw-text-mut); margin-top: 2px; }
+    .grw-stars { display: flex; gap: 2px; }
+    .grw-text {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--grw-text-mut);
+      flex: 1;
+    }
+    .grw-text-ellipsis {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    /* Carousel */
+    .grw-carousel-wrap { position: relative; }
+    .grw-carousel {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+    }
+    .grw-carousel::-webkit-scrollbar { display: none; }
+    .grw-carousel .grw-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+    }
+    .grw-carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #ebebeb;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      z-index: 2;
+    }
+    .grw-carousel-btn:hover { background: rgba(255,255,255,0.14); }
+    .grw-carousel-btn.prev { left: -20px; }
+    .grw-carousel-btn.next { right: -20px; }
+    .grw-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .grw-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .grw-dot.active {
+      background: var(--gold-dk);
+      transform: scale(1.3);
+    }
+    @media (max-width: 650px) {
+      .grw-carousel .grw-card { flex: 0 0 280px; }
+      .grw-carousel-btn { display: none; }
+    }
+
+    /* ===========================================
        8 — CTA PRINCIPAL
     =========================================== */
     .cta-section {
@@ -886,92 +1013,107 @@
     </div>
   </section>
 
-
   <!-- ==========================================
        7. PROVA
   ========================================== -->
   <section class="section">
     <div class="wrap">
-      <div class="proof-inner">
-
+     <div class="proof-inner">
         <p class="label">Atuação</p>
         <h2 class="hl hl-36" style="margin-bottom:36px;max-width:640px">
           Resultados construídos com base em estratégia, não em sorte.
         </h2>
 
-        <div class="card card-gold proof-card">
-          <p>
-            Atuamos na análise e condução de processos de imigração qualificada
-            para profissionais com trajetória consolidada.
-          </p>
-          <div class="proof-example">
-            <p>
-              Já acompanhamos casos de clientes que
-              <strong>não tinham experiência internacional</strong>  mas conseguiram
-              estruturar um processo sólido com base na carreira construída no Brasil.
-            </p>
+      <!-- Google Reviews -->
+      <div class="grw-section">
+          <div class="google-reviews-widget">
+            <div class="grw-header">
+              <svg class="grw-google-icon" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="grw-header-info">
+                <h3>Damas &amp; Lima | Consultoria Jurídica</h3>
+                <p>5 estrelas · 51 avaliações no Google</p>
+              </div>
+            </div>  
+            <div class="grw-carousel-wrap">
+              <button class="grw-carousel-btn prev" aria-label="Anterior" onclick="grwScroll(this,-1)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="grw-carousel-btn next" aria-label="Próximo" onclick="grwScroll(this,1)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+
+              <div class="grw-carousel" id="grwCarousel">
+
+                <div class="grw-card">
+                  <div class="grw-author">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjXPIq46NM1BVdueJeogkZgPJSc1U5WoBHmAQKLQ3Tqm-FtPdu08MQ=s128-c0x00000000-cc-rp-mo" alt="Jhonatas Santana" loading="lazy">
+                    <div class="grw-author-meta">
+                      <strong>Jhonatas Santana</strong>
+                    </div>
+                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
+                  </div>
+                  <p class="grw-text grw-text-ellipsis">Atendimento humanizado e profissional, entendendo cada caso de forma única e particular, eu super indico! Vocês são nota 10.</p>
+                </div>
+
+                <div class="grw-card">
+                  <div class="grw-author">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjUypUPevKaVGQAUZiE3YC6OVV4aYqp5GiCsSAvvyrqY90p1k7I=s128-c0x00000000-cc-rp-mo" alt="Ana Beatriz Cavalcante" loading="lazy">
+                    <div class="grw-author-meta">
+                      <strong>Ana Beatriz Cavalcante</strong>
+                    </div>
+                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
+                  </div>
+                  <p class="grw-text grw-text-ellipsis">Escritório excepcional. Atendimento humanizado e voltado para a necessidade do cliente. Atenção aos mínimos detalhes e expertise nos resultados. Sem dúvidas recomendo esse escritório!</p>
+                </div>
+
+                <div class="grw-card">
+                  <div class="grw-author">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjX5WoI9n_eBeBUISnm-Og5EFbAb65dnoXsu0JPQNzUdeiUkopzrBQ=s128-c0x00000000-cc-rp-mo" alt="Nando Silva" loading="lazy">
+                    <div class="grw-author-meta">
+                      <strong>Nando Silva</strong>
+                    </div>
+                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
+                  </div>
+                  <p class="grw-text grw-text-ellipsis">Venho expressar minha gratidão a essa equipe — que lugar incrível, ótimos profissionais e excelência no que fazem. Que Deus possa abençoar a todos desta instituição, vocês são incríveis!</p>
+                </div>
+
+                <div class="grw-card">
+                  <div class="grw-author">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjVf7mHPPCx56KYccRYefsntUkJcL-BkO8RTG4BQ3sbuMbOmZdA=s128-c0x00000000-cc-rp-mo" alt="Maria Rodrigues" loading="lazy">
+                    <div class="grw-author-meta">
+                      <strong>Maria Rodrigues</strong>
+                    </div>
+                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
+                  </div>
+                  <p class="grw-text grw-text-ellipsis">Nossa, eu amei cada detalhe, o espaço é lindo, bem aconchegante. E mais — a recepção é ótima, o trabalho deles é de excelência. Super indico.</p>
+                </div>
+
+                <div class="grw-card">
+                  <div class="grw-author">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjW3cUMhN2oD5AQajc2b2p_V7YrIUuWJYyOcvWRRNMa5dnONt8LlGg=s128-c0x00000000-cc-rp-mo" alt="Carmen Correia" loading="lazy">
+                    <div class="grw-author-meta">
+                      <strong>Carmen Correia</strong>
+                    </div>
+                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
+                  </div>
+                  <p class="grw-text grw-text-ellipsis">Estrutura física bem funcional, fácil acesso, equipe capacitada, atendimento especial e atenção profissional eficiente. Recomendo.</p>
+                </div>
+
+              </div>
+
+              <div class="grw-dots" id="grwDots">
+                <div class="grw-dot active" onclick="grwGoTo(0)"></div>
+                <div class="grw-dot" onclick="grwGoTo(1)"></div>
+                <div class="grw-dot" onclick="grwGoTo(2)"></div>
+                <div class="grw-dot" onclick="grwGoTo(3)"></div>
+                <div class="grw-dot" onclick="grwGoTo(4)"></div>
+              </div>
+            </div>
           </div>
         </div>
 
-      </div>
     </div>
   </section>
-
-
-  <!-- ==========================================
-       8. CTA PRINCIPAL
-  ========================================== -->
-  <section class="cta-section">
-    <div class="wrap">
-      <div class="cta-inner">
-
-        <h2 class="hl hl-44" style="margin-bottom:18px">
-          Descubra se o seu perfil sustenta um processo de imigração
-        </h2>
-
-        <p class="cta-sub">
-          Você não precisa iniciar um processo agora.<br>
-          Mas precisa evitar começar errado.
-        </p>
-
-        <div class="card cta-benefits">
-          <div class="benefit"><span class="ic">✔</span> Análise inicial do seu perfil</div>
-          <div class="benefit"><span class="ic">✔</span> Direcionamento estratégico</div>
-          <div class="benefit"><span class="ic">✔</span> Clareza sobre viabilidade real</div>
-        </div>
-
-        <!-- ⚠️ Substitua 55XXXXXXXXXX pelo número WhatsApp (ex: 5511999999999) -->
-        <a href="https://wa.me/55XXXXXXXXXX" class="btn btn-wa" target="_blank" rel="noopener">
-          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Falar com um especialista agora no WhatsApp
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ==========================================
-       9. URGÊNCIA + FOOTER
-  ========================================== -->
-  <div class="urgency">
-    <div class="wrap">
-      <p class="urgency-text">
-        <strong>Devido ao nível técnico das análises, nem todos os perfis são atendidos imediatamente.</strong>
-      </p>
-      <p class="urgency-text">
-        Solicite sua análise agora e garanta sua posição na fila de avaliações.
-      </p>
-      <div class="urgency-cta">
-        <!-- ⚠️ Substitua 55XXXXXXXXXX pelo número WhatsApp (ex: 5511999999999) -->
-        <a href="https://wa.me/55XXXXXXXXXX" class="btn btn-gold" target="_blank" rel="noopener">
-          Quero saber se tenho perfil para o Green Card
-        </a>
-      </div>
-    </div>
-  </div>
 
   <footer class="footer">
     <div class="wrap">
@@ -986,5 +1128,34 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var carousel = document.getElementById('grwCarousel');
+      var dots     = document.querySelectorAll('#grwDots .grw-dot');
+      var cardW    = 0;
+
+      function getCardWidth() {
+        var first = carousel.querySelector('.grw-card');
+        return first ? first.offsetWidth + 16 : 336;
+      }
+
+      function updateDots() {
+        var idx = Math.round(carousel.scrollLeft / getCardWidth());
+        dots.forEach(function (d, i) {
+          d.classList.toggle('active', i === idx);
+        });
+      }
+
+      carousel.addEventListener('scroll', updateDots, { passive: true });
+
+      window.grwScroll = function (btn, dir) {
+        carousel.scrollBy({ left: dir * getCardWidth(), behavior: 'smooth' });
+      };
+
+      window.grwGoTo = function (idx) {
+        carousel.scrollTo({ left: idx * getCardWidth(), behavior: 'smooth' });
+      };
+    })();
+  </script>
 </body>
 </html>
