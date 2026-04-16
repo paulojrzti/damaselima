@@ -637,6 +637,27 @@
     .benefit .ic { color: var(--green); }
 
     /* ===========================================
+       CTA INLINE (repetido nas seções)
+    =========================================== */
+    .cta-inline {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .cta-inline-note {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    @media (max-width: 767px) {
+      .cta-inline { align-items: stretch; }
+      .cta-inline .btn { width: 100%; font-size: 17px; padding: 16px 20px; }
+    }
+
+    /* ===========================================
        9 — URGÊNCIA + FOOTER
     =========================================== */
     .urgency {
@@ -867,6 +888,13 @@
         <strong>antes de falar em aplicação, analisamos se o seu perfil realmente sustenta o processo.</strong>
       </p>
 
+      <div class="cta-inline">
+        <a href="https://wa.me/55XXXXXXXXXX" class="btn btn-gold" target="_blank" rel="noopener">
+          Quero entender qual é o caminho certo para mim
+        </a>
+        <span class="cta-inline-note">Avaliação inicial gratuita · Sem compromisso</span>
+      </div>
+
     </div>
   </section>
 
@@ -969,6 +997,13 @@
           </div>
         </div>
 
+      <div class="cta-inline">
+        <a href="https://wa.me/55XXXXXXXXXX" class="btn btn-gold" target="_blank" rel="noopener">
+          Quero saber se tenho perfil para o Green Card
+        </a>
+        <span class="cta-inline-note">Como os clientes acima — análise honesta, sem enrolação</span>
+      </div>
+
     </div>
   </section>
 
@@ -1065,6 +1100,13 @@
           Por isso, a decisão mais importante não é aplicar.<br>
           É <em>saber se faz sentido aplicar</em>.
         </p>
+      </div>
+
+      <div class="cta-inline">
+        <a href="https://wa.me/55XXXXXXXXXX" class="btn btn-gold" target="_blank" rel="noopener">
+          Agendar avaliação estratégica
+        </a>
+        <span class="cta-inline-note">Só avançamos quando existe base real para o seu caso</span>
       </div>
 
     </div>
