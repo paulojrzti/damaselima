@@ -28,8 +28,8 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #1b0204;
-      color: #ebebeb;
+      background: #0B1F33;
+      color: #FFFFFF;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -41,18 +41,18 @@
        DESIGN TOKENS
     =========================================== */
     :root {
-      --bg:          #1b0204;
-      --bg-alt:      #140102;
-      --bg-card:     rgba(255,255,255,0.04);
-      --text:        #ebebeb;
-      --muted:       rgba(242, 242, 242, 0.62);
-      --green:       #aeff00;
-      --gold:        #e9d9a4;
-      --gold-dk:     #d9b182;
-      --gold-lt:     #e9d9a5;
-      --red:         #ff4040;
-      --border:      rgba(255,255,255,0.08);
-      --border-gold: rgba(233,217,164,0.22);
+      --bg:          #0B1F33;
+      --bg-alt:      #091929;
+      --bg-card:     rgba(255,255,255,0.05);
+      --text:        #FFFFFF;
+      --muted:       rgba(255, 255, 255, 0.60);
+      --green:       #E53935;
+      --gold:        #C9A96E;
+      --gold-dk:     #b8924d;
+      --gold-lt:     #d4b07a;
+      --red:         #E53935;
+      --border:      rgba(255,255,255,0.10);
+      --border-gold: rgba(201,169,110,0.25);
       --w:           1200px;   /* max content width  */
       --sp:          80px;     /* section padding    */
       --sp-m:        48px;     /* section pad mobile */
@@ -70,6 +70,94 @@
     }
     .section     { padding: var(--sp) 0; background: var(--bg); }
     .section-alt { background: var(--bg-alt); }
+
+    /* Bloco claro para alternar com as seções dark */
+    .section-light {
+      background: #F5F5F5;
+      color: #333333;
+    }
+    .section-light .hl {
+      background: none;
+      -webkit-text-fill-color: #0B1F33;
+      color: #0B1F33;
+    }
+    .section-light .subtitle-minor,
+    .section-light .reality-intro,
+    .section-light .reality-closing,
+    .section-light .obj-reality p,
+    .section-light .mech-intro,
+    .section-light .premium-body,
+    .section-light .cta-sub,
+    .section-light .cta-inline-note {
+      color: rgba(11, 31, 51, 0.72);
+    }
+    .section-light .label { color: #0B1F33; }
+    .section-light .mistake-text,
+    .section-light .turn-text,
+    .section-light .pillar-text,
+    .section-light .premium-close,
+    .section-light .obj-reality strong,
+    .section-light .mech-intro em,
+    .section-light .consequence-item,
+    .section-light .reality-closing strong {
+      color: #0B1F33;
+    }
+    .section-light .card {
+      background: rgba(255,255,255,0.72);
+      border-color: rgba(11, 31, 51, 0.12);
+    }
+    .section-light .card-red {
+      background: rgba(229, 57, 53, 0.06);
+      border-color: rgba(229, 57, 53, 0.22);
+    }
+    .section-light .card-green {
+      background: rgba(11, 31, 51, 0.05);
+      border-color: rgba(11, 31, 51, 0.18);
+    }
+    .section-light .mistake-icon,
+    .section-light .consequence-item .x,
+    .section-light .row-x .ic,
+    .section-light .card-red .obj-col-title {
+      color: #E53935;
+    }
+    .section-light .row-check .ic {
+      color: #C9A96E;
+    }
+    .section-light .turn-text em {
+      color: #E53935;
+    }
+    .section-light .turn-box .label {
+      color: #C9A96E !important;
+    }
+    .section-light .turn-box .turn-text {
+      color: #0B1F33;
+    }
+    .section-light .cta-inline,
+    .section-light .reality-closing,
+    .section-light .mech-closing,
+    .section-light .premium-close {
+      border-top-color: rgba(11, 31, 51, 0.14);
+    }
+    .section-light .google-reviews-widget {
+      --grw-bg:       rgba(255,255,255,0.80);
+      --grw-text:     #0B1F33;
+      --grw-text-mut: rgba(11,31,51,0.65);
+      --grw-border:   rgba(11,31,51,0.12);
+      --grw-shadow:   0 6px 18px rgba(11,31,51,0.10);
+    }
+    .section-light .grw-carousel-btn {
+      background: rgba(11,31,51,0.08);
+      border-color: rgba(11,31,51,0.12);
+      color: #0B1F33;
+    }
+    .section-light .grw-carousel-btn:hover { background: rgba(11,31,51,0.15); }
+
+    /* Última dobra sem linhas divisórias internas */
+    .final-fold .premium-close,
+    .final-fold .cta-inline {
+      border-top: none;
+      padding-top: 0;
+    }
 
     /* ===========================================
        TYPOGRAPHY SCALE
@@ -137,8 +225,8 @@
       padding: 32px 36px;
     }
     .card-gold  { border-color: var(--border-gold); }
-    .card-red   { background: rgba(255,64,64,.05);  border-color: rgba(255,64,64,.22); }
-    .card-green { background: rgba(174,255,0,.04);  border-color: rgba(174,255,0,.22); }
+    .card-red   { background: rgba(229,57,53,.06);  border-color: rgba(229,57,53,.22); }
+    .card-green { background: rgba(201,169,110,.06); border-color: rgba(201,169,110,.22); }
 
     /* Primary CTA — gold gradient */
     .btn {
@@ -157,12 +245,12 @@
       border: none;
     }
     .btn-gold {
-      background: linear-gradient(90deg, var(--gold-dk), var(--gold-lt));
-      color: var(--bg);
+      background: linear-gradient(135deg, #E53935 0%, #c62828 100%);
+      color: #FFFFFF;
     }
     .btn-gold:hover {
       transform: translateY(-2px) scale(1.015);
-      box-shadow: 0 8px 32px rgba(217,177,130,.35);
+      box-shadow: 0 8px 36px rgba(229,57,53,.50);
     }
 
     /* WhatsApp CTA */
@@ -209,6 +297,96 @@
     .col-list { display: flex; flex-direction: column; gap: 16px; }
 
     /* ===========================================
+       USA ELEMENTS
+    =========================================== */
+
+    /* Badge 🇺🇸 */
+    .usa-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 999px;
+      color: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      width: fit-content;
+    }
+    .usa-badge .flag { font-style: normal; font-size: 15px; }
+
+    /* Faixa decorativa bandeira americana */
+    .flag-stripe {
+      display: flex;
+      height: 3px;
+      border-radius: 2px;
+      overflow: hidden;
+      width: 48px;
+      gap: 2px;
+    }
+    .flag-stripe span:nth-child(1) { flex: 2; background: #B22234; border-radius: 2px; }
+    .flag-stripe span:nth-child(2) { flex: 1; background: #FFFFFF; border-radius: 2px; }
+    .flag-stripe span:nth-child(3) { flex: 2; background: #3C3B6E; border-radius: 2px; }
+
+    /* Trust bar hero */
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 20px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(8,18,45,.55);
+      backdrop-filter: blur(8px);
+      width: fit-content;
+      max-width: 100%;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: rgba(255,255,255,.72);
+      white-space: nowrap;
+    }
+    .hero-trust-item strong { color: #FFFFFF; font-weight: 700; }
+    .hero-trust-item .ti { font-size: 14px; }
+    .flag-img {
+      width: 22px;
+      height: 14px;
+      border-radius: 2px;
+      object-fit: cover;
+      vertical-align: middle;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .hero-trust-sep {
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,.18);
+      flex-shrink: 0;
+    }
+
+    /* Estrelas douradas inline */
+    .stars-inline {
+      display: inline-flex;
+      gap: 1px;
+      color: #C9A96E;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    @media (max-width: 767px) {
+      .hero-trust { gap: 6px 14px; padding: 12px 14px; }
+      .hero-trust-item { font-size: 12px; }
+      .hero-trust-sep { display: none; }
+    }
+
+    /* ===========================================
        1 — HERO
     =========================================== */
     .hero {
@@ -217,8 +395,9 @@
       overflow: hidden;
       display: flex;
       align-items: center;
+      background-color: #08122D;
 
-      background-image: url('desktop.jpg');
+      background-image: url('hero.png');
       background-size: contain;
       background-position: right top;
       background-repeat: no-repeat;
@@ -231,7 +410,7 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 35%;
-      background: linear-gradient(to top, #1b0204 15%, transparent 100%);
+      background: linear-gradient(to top, #08122D 15%, transparent 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -300,7 +479,125 @@
       text-align: center;
       margin-bottom: 56px;
     }
+    .reality-header .hl {
+      max-width: 760px;
+      margin: 0 auto;
+    }
     .reality-intro { font-size: 18px; color: var(--muted); margin-top: 14px; }
+
+    .reality-premium-layout {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      margin-bottom: 28px;
+      align-items: stretch;
+    }
+    .reality-problems {
+      padding: 32px;
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .reality-problems::before {
+      content: '';
+      position: absolute;
+      top: -70px;
+      right: -70px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,169,110,.14) 0%, rgba(201,169,110,0) 70%);
+      pointer-events: none;
+    }
+    .problem-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+      flex: 1;
+    }
+    .problem-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid rgba(201,169,110,.18);
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+    }
+    .problem-index {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      color: #C9A96E;
+      background: rgba(201,169,110,.12);
+      border: 1px solid rgba(201,169,110,.25);
+    }
+    .problem-copy {
+      font-size: 17px;
+      line-height: 1.55;
+      color: #08122D;
+    }
+    .reality-side {
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+      height: 100%;
+    }
+    .impact-card {
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .impact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .impact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #0B1F33;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(229,57,53,.08);
+    }
+    .impact-row .x {
+      color: #E53935;
+      font-weight: 700;
+    }
+    .turn-box-premium {
+      border-radius: 18px;
+      padding: 26px 24px;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .turn-kicker {
+      display: inline-flex;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #C9A96E;
+    }
+    .turn-box-premium .turn-text {
+      font-size: 30px;
+      line-height: 1.28;
+    }
 
     .mistakes-grid {
       display: grid;
@@ -329,7 +626,6 @@
     }
     .consequence-item .x { color: var(--red); }
 
-    .turn-box { margin-bottom: 40px; }
     .turn-box .label { color: var(--green); }
     .turn-text {
       font-family: 'Schibsted Grotesk', sans-serif;
@@ -344,10 +640,10 @@
       line-height: 1.75;
       color: var(--muted);
       max-width: 760px;
-      margin: 0 auto;
+      margin: 4px auto 0;
       text-align: center;
-      border-top: 1px solid var(--border);
-      padding-top: 40px;
+      border-top: none;
+      padding-top: 0;
     }
     .reality-closing strong { color: var(--gold); font-weight: 600; }
 
@@ -410,7 +706,155 @@
     .mech-closing em { color: var(--gold); font-style: normal; }
 
     /* ===========================================
-       5 — PREMIUM
+       5 — ABORDAGEM PREMIUM (nova dobra)
+    =========================================== */
+    .abord-layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .abord-left {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .abord-sub {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 8px;
+    }
+    .abord-sub em { color: var(--text); font-style: normal; font-weight: 600; }
+    .abord-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 8px;
+    }
+    .abord-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .abord-step:last-child { border-bottom: none; }
+    .abord-step-num {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(217,177,130,.45);
+      padding-top: 3px;
+      letter-spacing: 1px;
+    }
+    .abord-step-body { display: flex; flex-direction: column; gap: 4px; }
+    .abord-step-title {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .abord-step-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .abord-right {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .abord-invest-card {
+      border-radius: 20px;
+      padding: 36px;
+      background: linear-gradient(140deg, rgba(201,169,110,.12) 0%, rgba(11,31,51,.8) 60%);
+      border: 1px solid rgba(217,177,130,.22);
+      position: relative;
+      overflow: hidden;
+    }
+    .abord-invest-card::before {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,169,110,.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .abord-invest-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-dk);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .abord-invest-amount {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 58px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .abord-invest-desc {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .abord-divider {
+      height: 1px;
+      background: rgba(217,177,130,.18);
+      margin-bottom: 20px;
+    }
+    .abord-decision {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--text);
+    }
+    .abord-decision em { color: var(--green); font-style: normal; }
+
+    .abord-cta-card {
+      border-radius: 16px;
+      padding: 28px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+    .abord-cta-note {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1023px) {
+      .abord-layout { grid-template-columns: 1fr; }
+      .abord-right { position: static; }
+      .abord-invest-amount { font-size: 48px; }
+      .abord-invest-card { padding: 28px; }
+    }
+    @media (max-width: 767px) {
+      .abord-invest-amount { font-size: 42px; }
+      .abord-decision { font-size: 17px; }
+      .abord-step-title { font-size: 16px; }
+    }
+
+    /* ===========================================
+       5 — PREMIUM (legado, mantido para compatibilidade)
     =========================================== */
     .premium-inner { max-width: 700px; margin: 0 auto; text-align: center; }
     .premium-body {
@@ -441,8 +885,135 @@
     .premium-close em { color: var(--green); font-style: normal; }
 
     /* ===========================================
-       6 — OBJEÇÃO
+       6 — OBJEÇÃO / ESTRATÉGIA PREMIUM
     =========================================== */
+    .strat-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .strat-col {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .strat-col-bad {
+      background: rgba(255,255,255,.03);
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .strat-col-good {
+      background: rgba(11,31,51,.7);
+      position: relative;
+      overflow: hidden;
+    }
+    .strat-col-good::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,169,110,.14) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .strat-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+    .strat-col-bad  .strat-kicker { color: rgba(235,235,235,.35); }
+    .strat-col-good .strat-kicker { color: var(--gold-dk); }
+    .strat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .strat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .strat-item:last-child { border-bottom: none; }
+    .strat-ic-bad {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: 13px;
+      font-weight: 700;
+      background: rgba(255,255,255,.07);
+      color: rgba(235,235,235,.4);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .strat-ic-good {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: 13px;
+      font-weight: 700;
+      background: rgba(46,160,67,.14);
+      color: #3fb950;
+      border: 1px solid rgba(46,160,67,.28);
+    }
+    .strat-item-text {
+      font-size: 17px;
+      line-height: 1.55;
+      color: rgba(235,235,235,.55);
+    }
+    .strat-col-good .strat-item-text {
+      color: var(--text);
+      font-weight: 500;
+    }
+    .strat-close {
+      border-radius: 16px;
+      padding: 32px 40px;
+      background: linear-gradient(105deg, rgba(217,177,130,.08) 0%, rgba(8,18,45,.5) 100%);
+      border: 1px solid rgba(217,177,130,.2);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .strat-close-bar {
+      width: 4px;
+      align-self: stretch;
+      border-radius: 4px;
+      background: linear-gradient(to bottom, var(--gold-dk), var(--gold-lt));
+      flex-shrink: 0;
+    }
+    .strat-close-text {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .strat-close-text strong { color: var(--gold); font-weight: 700; }
+
+    @media (max-width: 1023px) {
+      .strat-layout { grid-template-columns: 1fr; }
+      .strat-col { padding: 32px 28px; }
+      .strat-col-bad { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .strat-close { padding: 26px 28px; }
+      .strat-close-text { font-size: 18px; }
+    }
+    @media (max-width: 767px) {
+      .strat-col { padding: 24px 20px; gap: 20px; }
+      .strat-close { gap: 14px; padding: 22px 20px; }
+      .strat-close-text { font-size: 16px; }
+    }
+
     .obj-header { text-align: center; margin-bottom: 52px; }
     .obj-intro  { font-size: 18px; color: var(--muted); margin-top: 14px; }
 
@@ -503,119 +1074,176 @@
       --grw-text:     #ebebeb;
       --grw-text-mut: rgba(242,242,242,0.55);
       --grw-border:   rgba(255,255,255,0.08);
-      --grw-shadow:   0 4px 20px rgba(0,0,0,0.25);
+      --grw-shadow:   0 12px 32px rgba(0,0,0,0.22);
     }
     .google-reviews-widget * { box-sizing: border-box; }
-    .grw-header {
-      display: flex;
+    .grw-premium {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 28px;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 28px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--grw-border);
     }
-    .grw-header-info h3 { margin: 0; font-size: 1.1rem; font-weight: 600; color: var(--grw-text); }
-    .grw-header-info p  { margin: 4px 0 0; color: var(--grw-text-mut); font-size: 0.875rem; }
-    .grw-google-icon    { width: 22px; height: 22px; flex-shrink: 0; }
-    .grw-card {
-      background: var(--grw-bg);
-      border: 1px solid var(--grw-border);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: var(--grw-shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .grw-copy {
       display: flex;
       flex-direction: column;
+      gap: 18px;
+      max-width: 520px;
     }
-    .grw-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    .grw-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--grw-text);
+      background: color-mix(in srgb, var(--grw-border) 70%, transparent);
+      border: 1px solid var(--grw-border);
+    }
+    .grw-badge .star { color: #fbbc04; }
+    .grw-copy h3 {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 44px;
+      line-height: 1.08;
+      color: var(--grw-text);
+      max-width: 520px;
+    }
+    .grw-copy p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--grw-text-mut);
+      max-width: 480px;
+    }
+    .grw-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .grw-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .grw-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--grw-text-mut) 45%, transparent);
+      cursor: pointer;
+      transition: width .25s ease, background .25s ease, transform .25s ease;
+    }
+    .grw-dot.active {
+      width: 28px;
+      background: var(--gold-dk);
+      transform: none;
+    }
+    .grw-carousel-wrap {
+      position: relative;
+      min-height: 380px;
+    }
+    .grw-carousel {
+      position: relative;
+      min-height: 380px;
+    }
+    .grw-card {
+      position: absolute;
+      inset: 0;
+      background: var(--grw-bg);
+      border: 1px solid var(--grw-border);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: var(--grw-shadow);
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateX(36px) scale(0.98);
+      transition: opacity .45s ease, transform .45s ease;
+      pointer-events: none;
+    }
+    .grw-card.active {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      pointer-events: auto;
+    }
+    .grw-quote {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-size: 52px;
+      line-height: 1;
+      color: color-mix(in srgb, var(--gold-dk) 60%, transparent);
+      margin-bottom: 2px;
+    }
+    .grw-text {
+      font-size: 19px;
+      line-height: 1.75;
+      color: var(--grw-text);
+      margin-bottom: 24px;
+      flex: 1;
     }
     .grw-author {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--grw-border);
     }
     .grw-author img {
-      width: 40px; height: 40px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       object-fit: cover;
+      border: 1px solid var(--grw-border);
     }
     .grw-author-meta { flex: 1; }
-    .grw-author-meta strong { display: block; font-size: 0.9rem; color: var(--grw-text); }
-    .grw-author-meta span   { display: block; font-size: 0.78rem; color: var(--grw-text-mut); margin-top: 2px; }
-    .grw-stars { display: flex; gap: 2px; }
-    .grw-text {
-      font-size: 0.9rem;
-      line-height: 1.55;
+    .grw-author-meta strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.2;
+      color: var(--grw-text);
+    }
+    .grw-author-meta span {
+      display: block;
+      font-size: 13px;
+      margin-top: 2px;
       color: var(--grw-text-mut);
-      flex: 1;
     }
-    .grw-text-ellipsis {
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    /* Carousel */
-    .grw-carousel-wrap { position: relative; }
-    .grw-carousel {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding-bottom: 4px;
-    }
-    .grw-carousel::-webkit-scrollbar { display: none; }
-    .grw-carousel .grw-card {
-      flex: 0 0 320px;
-      scroll-snap-align: start;
-    }
+    .grw-stars { display: flex; gap: 2px; }
     .grw-carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: #ebebeb;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid var(--grw-border);
+      background: color-mix(in srgb, var(--grw-bg) 92%, transparent);
+      color: var(--grw-text);
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background 0.2s;
-      z-index: 2;
+      transition: background .2s ease, transform .2s ease;
     }
-    .grw-carousel-btn:hover { background: rgba(255,255,255,0.14); }
-    .grw-carousel-btn.prev { left: -20px; }
-    .grw-carousel-btn.next { right: -20px; }
-    .grw-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 20px;
+    .grw-carousel-btn:hover {
+      background: color-mix(in srgb, var(--grw-bg) 76%, transparent);
+      transform: translateY(-1px);
     }
-    .grw-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
+    @media (max-width: 1023px) {
+      .grw-premium {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .grw-copy h3 { font-size: 34px; }
+      .grw-carousel-wrap,
+      .grw-carousel { min-height: 340px; }
     }
-    .grw-dot.active {
-      background: var(--gold-dk);
-      transform: scale(1.3);
-    }
-    @media (max-width: 650px) {
-      .grw-carousel .grw-card { flex: 0 0 280px; }
-      .grw-carousel-btn { display: none; }
+    @media (max-width: 767px) {
+      .grw-copy h3 { font-size: 30px; }
+      .grw-copy p { font-size: 15px; }
+      .grw-text { font-size: 16px; line-height: 1.65; }
+      .grw-carousel-wrap,
+      .grw-carousel { min-height: 320px; }
     }
 
     /* ===========================================
@@ -649,7 +1277,7 @@
     .cta-inline {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items:center;
       gap: 12px;
       margin-top: 48px;
       padding-top: 40px;
@@ -658,6 +1286,11 @@
     .cta-inline-note {
       font-size: 14px;
       color: var(--muted);
+    }
+    .cta-inline-flat {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 32px;
     }
     @media (max-width: 767px) {
       .cta-inline { align-items: center; margin-top: 32px; text-align: center; }
@@ -713,6 +1346,10 @@
       .hero__headline { font-size: 48px; }
       .hero__sub      { font-size: 17px; }
 
+      .reality-premium-layout { grid-template-columns: 1fr; }
+      .reality-problems { padding: 26px; }
+      .reality-side { grid-template-rows: auto; height: auto; }
+      .turn-box-premium .turn-text { font-size: 26px; }
       .mistakes-grid { grid-template-columns: 1fr; gap: 12px; }
       .pillars       { grid-template-columns: 1fr; }
       .obj-grid      { grid-template-columns: 1fr; }
@@ -735,7 +1372,7 @@
 
       /* Hero mobile */
       .hero {
-        background-image: url('mobile.jpg');
+        background-image: url('mobile.png');
         background-position: center top;
         background-size: cover; 
         align-items: flex-end;
@@ -746,15 +1383,15 @@
       .hero::before {
         background: linear-gradient(
           to top,
-          rgba(27,2,4,.98) 0%,
-          rgba(27,2,4,.85) 40%,
-          rgba(27,2,4,.55) 70%,
+          rgba(8,18,45,.98) 0%,
+          rgba(8,18,45,.85) 40%,
+          rgba(8,18,45,.55) 70%,
           transparent 100%
         );
       }
       .hero::after {
         height: 50%;
-        background: linear-gradient(to top, #1b0204 25%, transparent 100%);
+        background: linear-gradient(to top, #08122D 25%, transparent 100%);
       }
 
       .hero__content {
@@ -790,6 +1427,11 @@
 
       /* Cards */
       .card { padding: 24px 20px; }
+      .problem-item { grid-template-columns: 30px 1fr; gap: 10px; }
+      .problem-index { width: 30px; height: 30px; font-size: 13px; }
+      .problem-copy { font-size: 15px; }
+      .impact-row { font-size: 15px; }
+      .testimonials-title { display: none; }
 
       /* Consequence list */
       .consequence-list { flex-direction: column; gap: 12px; }
@@ -818,6 +1460,10 @@
         alt="Damas &amp; Lima Internacional"
       >
 
+      <span class="usa-badge">
+        <img src="https://flagcdn.com/w40/us.png" alt="EUA" class="flag-img"> Especialistas em imigração para os EUA
+      </span>
+
       <h1 class="hero__headline">
         Quer conquistar o&nbsp;<span class="accent-green">Green Card</span>
         e morar legalmente nos EUA?
@@ -834,13 +1480,29 @@
       </p>
 
       <div class="hero__actions">
-        <!-- ⚠️ Substitua 55XXXXXXXXXX pelo número WhatsApp (ex: 5511999999999) -->
         <a href="https://wa.me/5561999012555" class="btn btn-gold" target="_blank" rel="noopener">
           Quero saber se tenho perfil para o Green Card
         </a>
         <span class="micro-filter">
           Para profissionais com carreira estruturada e capacidade de investimento.
         </span>
+      </div>
+
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <img src="https://flagcdn.com/w40/us.png" alt="EUA" class="flag-img">
+          <span><strong>+200</strong> casos aprovados nos EUA</span>
+        </div>
+        <div class="hero-trust-sep"></div>
+        <div class="hero-trust-item">
+          <span class="stars-inline">★★★★★</span>
+          <span><strong>5.0</strong> no Google</span>
+        </div>
+        <div class="hero-trust-sep"></div>
+        <div class="hero-trust-item">
+          <span class="ti">⚖️</span>
+          <span><strong>+10 anos</strong> em imigração</span>
+        </div>
       </div>
 
     </div>
@@ -850,7 +1512,7 @@
   <!-- ==========================================
        2. REALIDADE
   ========================================== -->
-  <section class="section section-alt">
+  <section class="section section-alt section-light">
     <div class="wrap">
 
       <div class="reality-header">
@@ -860,38 +1522,43 @@
         <p class="reality-intro">A maioria dos brasileiros erra antes mesmo de começar.</p>
       </div>
 
-      <div class="mistakes-grid">
-        <div class="card mistake-card">
-          <div class="mistake-icon">✗</div>
-          <p class="mistake-text">Tentam encaixar o perfil em qualquer processo disponível.</p>
+      <div class="reality-premium-layout">
+        <div class="card reality-problems">
+          <p class="label">3 erros que custam caro</p>
+          <div class="problem-list">
+            <div class="problem-item">
+              <span class="problem-index">01</span>
+              <p class="problem-copy">Tentam encaixar o perfil em qualquer processo disponível.</p>
+            </div>
+            <div class="problem-item">
+              <span class="problem-index">02</span>
+              <p class="problem-copy">Acreditam em promessas de "aprovação fácil" sem análise real.</p>
+            </div>
+            <div class="problem-item">
+              <span class="problem-index">03</span>
+              <p class="problem-copy">Começam sem entender o nível de exigência do processo.</p>
+            </div>
+          </div>
         </div>
-        <div class="card mistake-card">
-          <div class="mistake-icon">✗</div>
-          <p class="mistake-text">Acreditam em promessas de "aprovação fácil" sem análise real.</p>
-        </div>
-        <div class="card mistake-card">
-          <div class="mistake-icon">✗</div>
-          <p class="mistake-text">Começam sem entender o nível de exigência do processo.</p>
-        </div>
-      </div>
 
-      <div class="card card-red consequence-box">
-        <p class="label" style="color:var(--red)">Consequência</p>
-        <div class="consequence-list">
-          <div class="consequence-item"><span class="x">✗</span> Processos negados</div>
-          <div class="consequence-item"><span class="x">✗</span> Anos perdidos</div>
-          <div class="consequence-item"><span class="x">✗</span> Mais de R$100 mil jogados fora</div>
+        <div class="reality-side">
+          <div class="card card-red impact-card">
+            <p class="label">Consequência real</p>
+            <div class="impact-list">
+              <div class="impact-row"><span class="x">✗</span> Processos negados</div>
+              <div class="impact-row"><span class="x">✗</span> Anos perdidos</div>
+              <div class="impact-row"><span class="x">✗</span> Mais de R$100 mil jogados fora</div>
+            </div>
+          </div>
+
+          <div class="card card-green turn-box turn-box-premium">
+            <span class="turn-kicker">A Virada</span>
+            <p class="turn-text">
+              O problema não é falta de oportunidade.<br>
+              É falta de <em>estratégia</em>.
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div style="height:16px"></div>
-
-      <div class="card card-green turn-box">
-        <p class="label" style="color:var(--green)">A Virada</p>
-        <p class="turn-text">
-          O problema não é falta de oportunidade.<br>
-          É falta de <em>estratégia</em>.
-        </p>
       </div>
 
       <p class="reality-closing">
@@ -899,7 +1566,7 @@
         <strong>antes de falar em aplicação, analisamos se o seu perfil realmente sustenta o processo.</strong>
       </p>
 
-      <div class="cta-inline">
+      <div class="cta-inline cta-inline-flat">
         <a href="https://wa.me/5561999012555" class="btn btn-gold" target="_blank" rel="noopener">
           Quero entender qual é o caminho certo para mim
         </a>
@@ -913,96 +1580,104 @@
   <!-- ==========================================
        3. PROVA SOCIAL
   ========================================== -->
-  <section class="section section-alt">
+  <section class="section section-alt section-light">
     <div class="wrap">
 
-      <p class="label">O que dizem nossos clientes</p>
-      <h2 class="hl hl-44" style="margin-bottom:36px;max-width:680px">
+      <h2 class="hl hl-44 testimonials-title" style="margin:0 auto 36px;max-width:680px;text-align:center">
         Quem passou pelo processo fala por nós.
       </h2>
 
       <div class="grw-section" style="margin-top:0">
-          <div class="google-reviews-widget">
-            <div class="grw-header">
-              <svg class="grw-google-icon" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-              <div class="grw-header-info">
-                <h3>Damas &amp; Lima | Consultoria Jurídica</h3>
-                <p>5 estrelas · 51 avaliações no Google</p>
+        <div class="google-reviews-widget">
+          <div class="grw-premium">
+            <div class="grw-copy">
+              <span class="grw-badge"><span class="star">★</span> Depoimentos reais</span>
+              <h3>Confiança construída com resultado e transparência.</h3>
+              <p>Cada caso é analisado com profundidade, clareza e estratégia. Essas avaliações mostram como nossos clientes percebem essa diferença na prática.</p>
+              <div class="grw-nav">
+                <button class="grw-carousel-btn prev" aria-label="Anterior" onclick="grwScroll(this,-1)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="grw-dots" id="grwDots">
+                  <div class="grw-dot active" onclick="grwGoTo(0)"></div>
+                  <div class="grw-dot" onclick="grwGoTo(1)"></div>
+                  <div class="grw-dot" onclick="grwGoTo(2)"></div>
+                  <div class="grw-dot" onclick="grwGoTo(3)"></div>
+                  <div class="grw-dot" onclick="grwGoTo(4)"></div>
+                </div>
+                <button class="grw-carousel-btn next" aria-label="Próximo" onclick="grwScroll(this,1)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
               </div>
-            </div>  
-            <div class="grw-carousel-wrap">
-              <button class="grw-carousel-btn prev" aria-label="Anterior" onclick="grwScroll(this,-1)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-              </button>
-              <button class="grw-carousel-btn next" aria-label="Próximo" onclick="grwScroll(this,1)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
+            </div>
 
+            <div class="grw-carousel-wrap">
               <div class="grw-carousel" id="grwCarousel">
 
                 <div class="grw-card">
+                  <div class="grw-quote">“</div>
                   <div class="grw-author">
                     <img src="https://lh3.googleusercontent.com/a-/ALV-UjXPIq46NM1BVdueJeogkZgPJSc1U5WoBHmAQKLQ3Tqm-FtPdu08MQ=s128-c0x00000000-cc-rp-mo" alt="Jhonatas Santana" loading="lazy">
                     <div class="grw-author-meta">
                       <strong>Jhonatas Santana</strong>
+                      <span>Avaliação no Google</span>
                     </div>
                     <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
                   </div>
-                  <p class="grw-text grw-text-ellipsis">Atendimento humanizado e profissional, entendendo cada caso de forma única e particular, eu super indico! Vocês são nota 10.</p>
+                  <p class="grw-text">Atendimento humanizado e profissional, entendendo cada caso de forma única e particular, eu super indico! Vocês são nota 10.</p>
                 </div>
 
                 <div class="grw-card">
+                  <div class="grw-quote">“</div>
                   <div class="grw-author">
                     <img src="https://lh3.googleusercontent.com/a-/ALV-UjUypUPevKaVGQAUZiE3YC6OVV4aYqp5GiCsSAvvyrqY90p1k7I=s128-c0x00000000-cc-rp-mo" alt="Ana Beatriz Cavalcante" loading="lazy">
                     <div class="grw-author-meta">
                       <strong>Ana Beatriz Cavalcante</strong>
+                      <span>Avaliação no Google</span>
                     </div>
                     <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
                   </div>
-                  <p class="grw-text grw-text-ellipsis">Escritório excepcional. Atendimento humanizado e voltado para a necessidade do cliente. Atenção aos mínimos detalhes e expertise nos resultados. Sem dúvidas recomendo esse escritório!</p>
+                  <p class="grw-text">Escritório excepcional. Atendimento humanizado e voltado para a necessidade do cliente. Atenção aos mínimos detalhes e expertise nos resultados. Sem dúvidas recomendo esse escritório!</p>
                 </div>
 
                 <div class="grw-card">
+                  <div class="grw-quote">“</div>
                   <div class="grw-author">
                     <img src="https://lh3.googleusercontent.com/a-/ALV-UjX5WoI9n_eBeBUISnm-Og5EFbAb65dnoXsu0JPQNzUdeiUkopzrBQ=s128-c0x00000000-cc-rp-mo" alt="Nando Silva" loading="lazy">
                     <div class="grw-author-meta">
                       <strong>Nando Silva</strong>
+                      <span>Avaliação no Google</span>
                     </div>
                     <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
                   </div>
-                  <p class="grw-text grw-text-ellipsis">Venho expressar minha gratidão a essa equipe — que lugar incrível, ótimos profissionais e excelência no que fazem. Que Deus possa abençoar a todos desta instituição, vocês são incríveis!</p>
+                  <p class="grw-text">Venho expressar minha gratidão a essa equipe, que lugar incrível, ótimos profissionais e excelência no que fazem. Que Deus possa abençoar a todos desta instituição, vocês são incríveis!</p>
                 </div>
 
                 <div class="grw-card">
+                  <div class="grw-quote">“</div>
                   <div class="grw-author">
                     <img src="https://lh3.googleusercontent.com/a-/ALV-UjVf7mHPPCx56KYccRYefsntUkJcL-BkO8RTG4BQ3sbuMbOmZdA=s128-c0x00000000-cc-rp-mo" alt="Maria Rodrigues" loading="lazy">
                     <div class="grw-author-meta">
                       <strong>Maria Rodrigues</strong>
+                      <span>Avaliação no Google</span>
                     </div>
                     <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
                   </div>
-                  <p class="grw-text grw-text-ellipsis">Nossa, eu amei cada detalhe, o espaço é lindo, bem aconchegante. E mais — a recepção é ótima, o trabalho deles é de excelência. Super indico.</p>
+                  <p class="grw-text">Nossa, eu amei cada detalhe, o espaço é lindo, bem aconchegante. E mais, a recepção é ótima, o trabalho deles é de excelência. Super indico.</p>
                 </div>
 
                 <div class="grw-card">
+                  <div class="grw-quote">“</div>
                   <div class="grw-author">
                     <img src="https://lh3.googleusercontent.com/a-/ALV-UjW3cUMhN2oD5AQajc2b2p_V7YrIUuWJYyOcvWRRNMa5dnONt8LlGg=s128-c0x00000000-cc-rp-mo" alt="Carmen Correia" loading="lazy">
                     <div class="grw-author-meta">
                       <strong>Carmen Correia</strong>
+                      <span>Avaliação no Google</span>
                     </div>
                     <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
                   </div>
-                  <p class="grw-text grw-text-ellipsis">Estrutura física bem funcional, fácil acesso, equipe capacitada, atendimento especial e atenção profissional eficiente. Recomendo.</p>
+                  <p class="grw-text">Estrutura física bem funcional, fácil acesso, equipe capacitada, atendimento especial e atenção profissional eficiente. Recomendo.</p>
                 </div>
-
-              </div>
-
-              <div class="grw-dots" id="grwDots">
-                <div class="grw-dot active" onclick="grwGoTo(0)"></div>
-                <div class="grw-dot" onclick="grwGoTo(1)"></div>
-                <div class="grw-dot" onclick="grwGoTo(2)"></div>
-                <div class="grw-dot" onclick="grwGoTo(3)"></div>
-                <div class="grw-dot" onclick="grwGoTo(4)"></div>
               </div>
             </div>
           </div>
@@ -1019,97 +1694,153 @@
 
 
   <!-- ==========================================
-       4. ESTRATÉGIA (fusão dobras 3 + 6)
+       4. ESTRATÉGIA
   ========================================== -->
   <section class="section">
     <div class="wrap">
-      <div class="opp-inner">
 
-        <h2 class="hl hl-52" style="margin-bottom:36px">
-          Green Card não é sorte. É <span class="accent-green">estratégia</span>.
-        </h2>
-
-        <div class="obj-grid">
-          <div class="card card-red obj-col">
-            <p class="obj-col-title">O que prometem</p>
-            <div class="col-list">
-              <div class="row-x"><span class="ic">✗</span> "Aprovação garantida"</div>
-              <div class="row-x"><span class="ic">✗</span> "Processo fácil"</div>
-              <div class="row-x"><span class="ic">✗</span> "Qualquer perfil consegue"</div>
-            </div>
-          </div>
-          <div class="card card-green obj-col">
-            <p class="obj-col-title">Nossa abordagem</p>
-            <div class="col-list">
-              <div class="row-check"><span class="ic">✔</span> Análise técnica real de cada caso</div>
-              <div class="row-check"><span class="ic">✔</span> Transparência sobre viabilidade</div>
-              <div class="row-check"><span class="ic">✔</span> Só avançamos com base sólida</div>
-            </div>
-          </div>
-        </div>
-        <div class="card card-gold counterpoint">
-          <p>Mas não é para qualquer perfil.
-            <strong>E é exatamente por isso que precisa ser feito com estratégia.</strong></p>
-        </div>
-
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+        <div class="flag-stripe"><span></span><span></span><span></span></div>
+        <p class="label" style="margin-bottom:0">Por que a maioria falha</p>
       </div>
+      <h2 class="hl hl-52" style="margin-bottom:40px;max-width:720px">
+        Green Card não é sorte.<br>É <span class="accent-green">estratégia</span>.
+      </h2>
+
+      <div class="strat-layout">
+        <div class="strat-col strat-col-bad">
+          <p class="strat-kicker">O que a maioria encontra</p>
+          <div class="strat-list">
+            <div class="strat-item">
+              <span class="strat-ic-bad">✗</span>
+              <p class="strat-item-text">Promessas de "aprovação garantida" sem análise real do perfil</p>
+            </div>
+            <div class="strat-item">
+              <span class="strat-ic-bad">✗</span>
+              <p class="strat-item-text">Processo iniciado sem verificar se o caso realmente sustenta</p>
+            </div>
+            <div class="strat-item">
+              <span class="strat-ic-bad">✗</span>
+              <p class="strat-item-text">Investimento de R$100 mil ou mais em processos negados</p>
+            </div>
+            <div class="strat-item">
+              <span class="strat-ic-bad">✗</span>
+              <p class="strat-item-text">Anos perdidos sem nenhuma perspectiva de aprovação</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="strat-col strat-col-good">
+          <p class="strat-kicker">Como trabalhamos</p>
+          <div class="strat-list">
+            <div class="strat-item">
+              <span class="strat-ic-good">✔</span>
+              <p class="strat-item-text">Análise técnica e honesta do perfil antes de qualquer avanço</p>
+            </div>
+            <div class="strat-item">
+              <span class="strat-ic-good">✔</span>
+              <p class="strat-item-text">Seleção criteriosa: só aceitamos casos com base sólida</p>
+            </div>
+            <div class="strat-item">
+              <span class="strat-ic-good">✔</span>
+              <p class="strat-item-text">Construção robusta do processo alinhada às exigências dos EUA</p>
+            </div>
+            <div class="strat-item">
+              <span class="strat-ic-good">✔</span>
+              <p class="strat-item-text">Transparência total sobre viabilidade antes do investimento</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strat-close">
+        <div class="strat-close-bar"></div>
+        <p class="strat-close-text">
+          Não é para qualquer perfil, e é exatamente por isso que
+          <strong>precisa ser feito com estratégia.</strong>
+        </p>
+      </div>
+
     </div>
   </section>
 
 
   <!-- ==========================================
-       5. ABORDAGEM (fusão dobras 4 + 5)
+       5. ABORDAGEM
   ========================================== -->
   <section class="section section-alt">
     <div class="wrap">
 
-      <h2 class="hl hl-52" style="margin-bottom:20px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+        <div class="flag-stripe"><span></span><span></span><span></span></div>
+        <p class="label" style="margin-bottom:0">Nossa abordagem</p>
+      </div>
+      <h2 class="hl hl-52" style="margin-bottom:44px;max-width:760px">
         Não analisamos o visto.<br>Analisamos o <span class="accent-green">seu caso</span>.
       </h2>
 
-      <p class="mech-intro">
-        Enquanto muitos tentam encaixar clientes em processos…
-        <em>Nós fazemos o contrário.</em>
-      </p>
+      <div class="abord-layout">
 
-      <div class="pillars">
-        <div class="card pillar">
-          <span class="pillar-check">✔</span>
-          <p class="pillar-text">Avaliação estratégica antes de qualquer decisão</p>
+        <div class="abord-left">
+          <p class="abord-sub">
+            Enquanto muitos tentam encaixar clientes em processos,
+            <em>nós fazemos o contrário.</em>
+          </p>
+          <div class="abord-steps">
+            <div class="abord-step">
+              <span class="abord-step-num">01</span>
+              <div class="abord-step-body">
+                <p class="abord-step-title">Avaliação estratégica</p>
+                <p class="abord-step-desc">Analisamos profundamente o perfil antes de qualquer decisão ou investimento.</p>
+              </div>
+            </div>
+            <div class="abord-step">
+              <span class="abord-step-num">02</span>
+              <div class="abord-step-body">
+                <p class="abord-step-title">Seleção criteriosa</p>
+                <p class="abord-step-desc">Só aceitamos casos com base real. Transparência sobre viabilidade desde o início.</p>
+              </div>
+            </div>
+            <div class="abord-step">
+              <span class="abord-step-num">03</span>
+              <div class="abord-step-body">
+                <p class="abord-step-title">Construção técnica robusta</p>
+                <p class="abord-step-desc">Elaboramos o processo com rigor técnico e domínio das exigências dos EUA.</p>
+              </div>
+            </div>
+            <div class="abord-step">
+              <span class="abord-step-num">04</span>
+              <div class="abord-step-body">
+                <p class="abord-step-title">Atuação alinhada Brasil–EUA</p>
+                <p class="abord-step-desc">Integramos os requisitos legais dos dois países para uma jornada sem surpresas.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card pillar">
-          <span class="pillar-check">✔</span>
-          <p class="pillar-text">Seleção criteriosa de casos que nem todos seguem</p>
-        </div>
-        <div class="card pillar">
-          <span class="pillar-check">✔</span>
-          <p class="pillar-text">Construção técnica robusta do processo</p>
-        </div>
-        <div class="card pillar">
-          <span class="pillar-check">✔</span>
-          <p class="pillar-text">Atuação alinhada entre exigências do Brasil e dos EUA</p>
-        </div>
-      </div>
 
-      <div class="premium-inner" style="margin-top:48px">
-        <p class="premium-body">
-          Este não é um processo barato.<br>
-          E não deve ser tratado como uma tentativa.<br>
-          Hoje, um processo bem estruturado pode ultrapassar
-          <span class="premium-amount">US$ 20.000</span>
-          de investimento.
-        </p>
-        <p class="premium-close">
-          Por isso, a decisão mais importante não é aplicar.<br>
-          É <em>saber se faz sentido aplicar</em>.
-        </p>
-      </div>
+        <div class="abord-right">
+          <div class="abord-invest-card">
+            <span class="usa-badge" style="margin-bottom:16px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)"><img src="https://flagcdn.com/w40/us.png" alt="EUA" class="flag-img"> Processo para os EUA</span>
+            <span class="abord-invest-label">Antes de qualquer passo</span>
+            <p class="abord-invest-desc">
+              Este não é um processo barato e não deve ser tratado como uma tentativa.
+              Por isso, analisamos profundamente o seu perfil antes de qualquer comprometimento.
+            </p>
+            <div class="abord-divider"></div>
+            <p class="abord-decision">
+              A decisão mais importante não é aplicar.<br>
+              É <em>saber se faz sentido aplicar</em>.
+            </p>
+          </div>
 
-      <div class="cta-inline">
-        <a href="https://wa.me/5561999012555" class="btn btn-gold" target="_blank" rel="noopener">
-          Agendar avaliação estratégica
-        </a>
-        <span class="cta-inline-note">Só avançamos quando existe base real para o seu caso</span>
+          <div class="abord-cta-card">
+            <a href="https://wa.me/5561999012555" class="btn btn-gold" style="width:100%" target="_blank" rel="noopener">
+              Agendar avaliação estratégica
+            </a>
+            <span class="abord-cta-note">Só avançamos quando existe base real para o seu caso</span>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -1132,30 +1863,49 @@
   <script>
     (function () {
       var carousel = document.getElementById('grwCarousel');
-      var dots     = document.querySelectorAll('#grwDots .grw-dot');
-      var cardW    = 0;
+      var dots = document.querySelectorAll('#grwDots .grw-dot');
+      if (!carousel) return;
+      var cards = carousel.querySelectorAll('.grw-card');
+      var current = 0;
+      var timerId;
 
-      function getCardWidth() {
-        var first = carousel.querySelector('.grw-card');
-        return first ? first.offsetWidth + 16 : 336;
-      }
-
-      function updateDots() {
-        var idx = Math.round(carousel.scrollLeft / getCardWidth());
-        dots.forEach(function (d, i) {
-          d.classList.toggle('active', i === idx);
+      function render(index) {
+        if (!cards.length) return;
+        current = (index + cards.length) % cards.length;
+        cards.forEach(function (card, i) {
+          card.classList.toggle('active', i === current);
+        });
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('active', i === current);
         });
       }
 
-      carousel.addEventListener('scroll', updateDots, { passive: true });
+      function startAutoRotate() {
+        if (cards.length <= 1) return;
+        timerId = setInterval(function () {
+          render(current + 1);
+        }, 6000);
+      }
+
+      function stopAutoRotate() {
+        if (!timerId) return;
+        clearInterval(timerId);
+        timerId = null;
+      }
 
       window.grwScroll = function (btn, dir) {
-        carousel.scrollBy({ left: dir * getCardWidth(), behavior: 'smooth' });
+        render(current + dir);
       };
 
       window.grwGoTo = function (idx) {
-        carousel.scrollTo({ left: idx * getCardWidth(), behavior: 'smooth' });
+        render(idx);
       };
+
+      carousel.addEventListener('mouseenter', stopAutoRotate);
+      carousel.addEventListener('mouseleave', startAutoRotate);
+
+      render(0);
+      startAutoRotate();
     })();
   </script>
 </body>
