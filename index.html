@@ -1327,7 +1327,14 @@
       justify-content: space-between;
       gap: 20px;
     }
-    .footer-logo  { height: 40px; width: auto; object-fit: contain; }
+    .footer-logo  {
+      height: 40px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
     .footer-copy  { font-size: 13px; color: rgba(235,235,235,.32); }
 
     /* ===========================================
@@ -1438,6 +1445,7 @@
 
       /* Footer */
       .footer-inner { flex-direction: column; text-align: center; }
+      .footer-logo { height: 56px; }
     }
 
   </style>
@@ -1465,44 +1473,24 @@
       </span>
 
       <h1 class="hero__headline">
-        Quer conquistar o&nbsp;<span class="accent-green">Green Card</span>
-        e morar legalmente nos EUA?
+        Green Card para profissionais qualificados através do <span class="accent-green">EB2 NIW</span>
       </h1>
 
       <p class="hero__sub">
-        Descubra se o seu perfil realmente tem chances de aprovação antes de
-        investir mais de <strong>R$100 mil</strong> em um processo que pode ser negado.
+        Voltado para médicos, engenheiros, empresários, executivos, advogados e outros profissionais com carreira consolidada.
       </p>
 
       <p class="hero__proof">
-        Não é para <strong>todos</strong>. A maioria dos brasileiros é negada
-        por escolher o <strong>caminho errado</strong>.
+        Processo imigratório baseado em qualificação profissional, experiência relevante e análise estratégica de elegibilidade.
       </p>
 
       <div class="hero__actions">
         <a href="https://wa.me/5561999012555" class="btn btn-gold" target="_blank" rel="noopener">
-          Quero saber se tenho perfil para o Green Card
+          Analisar Minha Elegibilidade
         </a>
         <span class="micro-filter">
-          Para profissionais com carreira estruturada e capacidade de investimento.
+          Avaliação estratégica para identificar se o seu perfil possui base real para o EB2 NIW.
         </span>
-      </div>
-
-      <div class="hero-trust">
-        <div class="hero-trust-item">
-          <img src="https://flagcdn.com/w40/us.png" alt="EUA" class="flag-img">
-          <span><strong>+200</strong> casos aprovados nos EUA</span>
-        </div>
-        <div class="hero-trust-sep"></div>
-        <div class="hero-trust-item">
-          <span class="stars-inline">★★★★★</span>
-          <span><strong>5.0</strong> no Google</span>
-        </div>
-        <div class="hero-trust-sep"></div>
-        <div class="hero-trust-item">
-          <span class="ti">⚖️</span>
-          <span><strong>+10 anos</strong> em imigração</span>
-        </div>
       </div>
 
     </div>
@@ -1510,67 +1498,59 @@
 
 
   <!-- ==========================================
-       2. REALIDADE
+       2. ELEGIBILIDADE
   ========================================== -->
   <section class="section section-alt section-light">
     <div class="wrap">
 
       <div class="reality-header">
         <h2 class="hl hl-44">
-          A verdade que ninguém te conta sobre o <span class="accent-green">Green Card</span>
+          Quem normalmente possui maior potencial de elegibilidade no <span class="accent-green">EB2 NIW</span>?
         </h2>
-        <p class="reality-intro">A maioria dos brasileiros erra antes mesmo de começar.</p>
+        <p class="reality-intro">
+          O processo costuma ser indicado para profissionais com trajetória profissional sólida e atuação relevante em suas áreas.
+        </p>
       </div>
 
-      <div class="reality-premium-layout">
-        <div class="card reality-problems">
-          <p class="label">3 erros que custam caro</p>
-          <div class="problem-list">
-            <div class="problem-item">
-              <span class="problem-index">01</span>
-              <p class="problem-copy">Tentam encaixar o perfil em qualquer processo disponível.</p>
-            </div>
-            <div class="problem-item">
-              <span class="problem-index">02</span>
-              <p class="problem-copy">Acreditam em promessas de "aprovação fácil" sem análise real.</p>
-            </div>
-            <div class="problem-item">
-              <span class="problem-index">03</span>
-              <p class="problem-copy">Começam sem entender o nível de exigência do processo.</p>
-            </div>
-          </div>
+      <div class="pillars">
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Profissionais com graduação</p>
         </div>
-
-        <div class="reality-side">
-          <div class="card card-red impact-card">
-            <p class="label">Consequência real</p>
-            <div class="impact-list">
-              <div class="impact-row"><span class="x">✗</span> Processos negados</div>
-              <div class="impact-row"><span class="x">✗</span> Anos perdidos</div>
-              <div class="impact-row"><span class="x">✗</span> Mais de R$100 mil jogados fora</div>
-            </div>
-          </div>
-
-          <div class="card card-green turn-box turn-box-premium">
-            <span class="turn-kicker">A Virada</span>
-            <p class="turn-text">
-              O problema não é falta de oportunidade.<br>
-              É falta de <em>estratégia</em>.
-            </p>
-          </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Executivos e gestores</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Empresários</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Médicos e especialistas</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Engenheiros e profissionais técnicos</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Profissionais com carreira consolidada</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Pessoas com experiência relevante</p>
         </div>
       </div>
 
       <p class="reality-closing">
-        Aqui, o caminho é o oposto:
-        <strong>antes de falar em aplicação, analisamos se o seu perfil realmente sustenta o processo.</strong>
+        Nem todos os perfis são elegíveis. Por isso, uma <strong>análise estratégica é fundamental.</strong>
       </p>
 
       <div class="cta-inline cta-inline-flat">
         <a href="https://wa.me/5561999012555" class="btn btn-gold" target="_blank" rel="noopener">
-          Quero entender qual é o caminho certo para mim
+          Descobrir Se Meu Perfil É Elegível
         </a>
-        <span class="cta-inline-note">Avaliação inicial gratuita · Sem compromisso</span>
       </div>
 
     </div>
@@ -1578,114 +1558,62 @@
 
 
   <!-- ==========================================
-       3. PROVA SOCIAL
+       3. FATORES
   ========================================== -->
   <section class="section section-alt section-light">
     <div class="wrap">
 
-      <h2 class="hl hl-44 testimonials-title" style="margin:0 auto 36px;max-width:680px;text-align:center">
-        Quem passou pelo processo fala por nós.
-      </h2>
+      <div class="reality-header">
+        <h2 class="hl hl-44">
+          Fatores que podem fortalecer uma candidatura no <span class="accent-green">EB2 NIW</span>
+        </h2>
+        <p class="reality-intro">
+          A elegibilidade normalmente envolve um conjunto de fatores profissionais, acadêmicos e estratégicos.
+        </p>
+      </div>
 
-      <div class="grw-section" style="margin-top:0">
-        <div class="google-reviews-widget">
-          <div class="grw-premium">
-            <div class="grw-copy">
-              <span class="grw-badge"><span class="star">★</span> Depoimentos reais</span>
-              <h3>Confiança construída com resultado e transparência.</h3>
-              <p>Cada caso é analisado com profundidade, clareza e estratégia. Essas avaliações mostram como nossos clientes percebem essa diferença na prática.</p>
-              <div class="grw-nav">
-                <button class="grw-carousel-btn prev" aria-label="Anterior" onclick="grwScroll(this,-1)">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <div class="grw-dots" id="grwDots">
-                  <div class="grw-dot active" onclick="grwGoTo(0)"></div>
-                  <div class="grw-dot" onclick="grwGoTo(1)"></div>
-                  <div class="grw-dot" onclick="grwGoTo(2)"></div>
-                  <div class="grw-dot" onclick="grwGoTo(3)"></div>
-                  <div class="grw-dot" onclick="grwGoTo(4)"></div>
-                </div>
-                <button class="grw-carousel-btn next" aria-label="Próximo" onclick="grwScroll(this,1)">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="grw-carousel-wrap">
-              <div class="grw-carousel" id="grwCarousel">
-
-                <div class="grw-card">
-                  <div class="grw-quote">“</div>
-                  <div class="grw-author">
-                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjXPIq46NM1BVdueJeogkZgPJSc1U5WoBHmAQKLQ3Tqm-FtPdu08MQ=s128-c0x00000000-cc-rp-mo" alt="Jhonatas Santana" loading="lazy">
-                    <div class="grw-author-meta">
-                      <strong>Jhonatas Santana</strong>
-                      <span>Avaliação no Google</span>
-                    </div>
-                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
-                  </div>
-                  <p class="grw-text">Atendimento humanizado e profissional, entendendo cada caso de forma única e particular, eu super indico! Vocês são nota 10.</p>
-                </div>
-
-                <div class="grw-card">
-                  <div class="grw-quote">“</div>
-                  <div class="grw-author">
-                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjUypUPevKaVGQAUZiE3YC6OVV4aYqp5GiCsSAvvyrqY90p1k7I=s128-c0x00000000-cc-rp-mo" alt="Ana Beatriz Cavalcante" loading="lazy">
-                    <div class="grw-author-meta">
-                      <strong>Ana Beatriz Cavalcante</strong>
-                      <span>Avaliação no Google</span>
-                    </div>
-                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
-                  </div>
-                  <p class="grw-text">Escritório excepcional. Atendimento humanizado e voltado para a necessidade do cliente. Atenção aos mínimos detalhes e expertise nos resultados. Sem dúvidas recomendo esse escritório!</p>
-                </div>
-
-                <div class="grw-card">
-                  <div class="grw-quote">“</div>
-                  <div class="grw-author">
-                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjX5WoI9n_eBeBUISnm-Og5EFbAb65dnoXsu0JPQNzUdeiUkopzrBQ=s128-c0x00000000-cc-rp-mo" alt="Nando Silva" loading="lazy">
-                    <div class="grw-author-meta">
-                      <strong>Nando Silva</strong>
-                      <span>Avaliação no Google</span>
-                    </div>
-                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
-                  </div>
-                  <p class="grw-text">Venho expressar minha gratidão a essa equipe, que lugar incrível, ótimos profissionais e excelência no que fazem. Que Deus possa abençoar a todos desta instituição, vocês são incríveis!</p>
-                </div>
-
-                <div class="grw-card">
-                  <div class="grw-quote">“</div>
-                  <div class="grw-author">
-                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjVf7mHPPCx56KYccRYefsntUkJcL-BkO8RTG4BQ3sbuMbOmZdA=s128-c0x00000000-cc-rp-mo" alt="Maria Rodrigues" loading="lazy">
-                    <div class="grw-author-meta">
-                      <strong>Maria Rodrigues</strong>
-                      <span>Avaliação no Google</span>
-                    </div>
-                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
-                  </div>
-                  <p class="grw-text">Nossa, eu amei cada detalhe, o espaço é lindo, bem aconchegante. E mais, a recepção é ótima, o trabalho deles é de excelência. Super indico.</p>
-                </div>
-
-                <div class="grw-card">
-                  <div class="grw-quote">“</div>
-                  <div class="grw-author">
-                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjW3cUMhN2oD5AQajc2b2p_V7YrIUuWJYyOcvWRRNMa5dnONt8LlGg=s128-c0x00000000-cc-rp-mo" alt="Carmen Correia" loading="lazy">
-                    <div class="grw-author-meta">
-                      <strong>Carmen Correia</strong>
-                      <span>Avaliação no Google</span>
-                    </div>
-                    <div class="grw-stars"><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg><svg fill="#fbbc04" viewBox="0 0 24 24" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg></div>
-                  </div>
-                  <p class="grw-text">Estrutura física bem funcional, fácil acesso, equipe capacitada, atendimento especial e atenção profissional eficiente. Recomendo.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="pillars">
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Pós-graduação ou especializações</p>
         </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Experiência profissional relevante</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Cargo de liderança</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Histórico profissional sólido</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Empresa própria</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Produção acadêmica ou técnica</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Atuação estratégica na área</p>
+        </div>
+        <div class="pillar card">
+          <span class="pillar-check">✓</span>
+          <p class="pillar-text">Reconhecimento profissional</p>
+        </div>
+      </div>
+
+      <p class="mech-closing" style="text-align:center;margin-bottom:0">
+        O EB2 NIW não é um processo destinado a <em>qualquer perfil profissional.</em>
+      </p>
 
       <div class="cta-inline">
         <a href="https://wa.me/5561999012555" class="btn btn-gold" target="_blank" rel="noopener">
-          Quero saber se tenho perfil para o Green Card
+          Solicitar Uma Análise Estratégica
         </a>
       </div>
 
@@ -1694,71 +1622,61 @@
 
 
   <!-- ==========================================
-       4. ESTRATÉGIA
+       4. POSICIONAMENTO
   ========================================== -->
   <section class="section">
     <div class="wrap">
 
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <div class="flag-stripe"><span></span><span></span><span></span></div>
-        <p class="label" style="margin-bottom:0">Por que a maioria falha</p>
+        <p class="label" style="margin-bottom:0">Análise estratégica</p>
       </div>
-      <h2 class="hl hl-52" style="margin-bottom:40px;max-width:720px">
-        Green Card não é sorte.<br>É <span class="accent-green">estratégia</span>.
+      <h2 class="hl hl-52" style="margin-bottom:20px;max-width:760px">
+        Green Card não é sorte. É <span class="accent-green">posicionamento profissional</span>.
       </h2>
+      <p class="mech-intro" style="max-width:760px;margin-bottom:32px">
+        Muitos profissionais iniciam processos sem compreender se realmente possuem um perfil competitivo para o EB2 NIW.
+        Nosso foco é realizar uma análise estratégica antes de qualquer avanço.
+      </p>
 
       <div class="strat-layout">
         <div class="strat-col strat-col-bad">
-          <p class="strat-kicker">O que a maioria encontra</p>
-          <div class="strat-list">
-            <div class="strat-item">
-              <span class="strat-ic-bad">✗</span>
-              <p class="strat-item-text">Promessas de "aprovação garantida" sem análise real do perfil</p>
-            </div>
-            <div class="strat-item">
-              <span class="strat-ic-bad">✗</span>
-              <p class="strat-item-text">Processo iniciado sem verificar se o caso realmente sustenta</p>
-            </div>
-            <div class="strat-item">
-              <span class="strat-ic-bad">✗</span>
-              <p class="strat-item-text">Investimento de R$100 mil ou mais em processos negados</p>
-            </div>
-            <div class="strat-item">
-              <span class="strat-ic-bad">✗</span>
-              <p class="strat-item-text">Anos perdidos sem nenhuma perspectiva de aprovação</p>
-            </div>
-          </div>
+          <p class="strat-kicker">Antes de avançar</p>
+          <p class="strat-item-text" style="font-size:18px;line-height:1.75">
+            A análise correta evita decisões precipitadas e ajuda a entender se o processo faz sentido para o seu momento profissional.
+          </p>
+          <p class="strat-item-text" style="font-size:18px;line-height:1.75">
+            Clareza estratégica é o que transforma expectativa em viabilidade real.
+          </p>
         </div>
 
         <div class="strat-col strat-col-good">
-          <p class="strat-kicker">Como trabalhamos</p>
+          <p class="strat-kicker">O que avaliamos</p>
           <div class="strat-list">
             <div class="strat-item">
-              <span class="strat-ic-good">✔</span>
-              <p class="strat-item-text">Análise técnica e honesta do perfil antes de qualquer avanço</p>
+              <span class="strat-ic-good">✓</span>
+              <p class="strat-item-text">Avaliação técnica de elegibilidade</p>
             </div>
             <div class="strat-item">
-              <span class="strat-ic-good">✔</span>
-              <p class="strat-item-text">Seleção criteriosa: só aceitamos casos com base sólida</p>
+              <span class="strat-ic-good">✓</span>
+              <p class="strat-item-text">Clareza sobre viabilidade do processo</p>
             </div>
             <div class="strat-item">
-              <span class="strat-ic-good">✔</span>
-              <p class="strat-item-text">Construção robusta do processo alinhada às exigências dos EUA</p>
+              <span class="strat-ic-good">✓</span>
+              <p class="strat-item-text">Estratégia alinhada ao perfil profissional</p>
             </div>
             <div class="strat-item">
-              <span class="strat-ic-good">✔</span>
-              <p class="strat-item-text">Transparência total sobre viabilidade antes do investimento</p>
+              <span class="strat-ic-good">✓</span>
+              <p class="strat-item-text">Transparência desde o início</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="strat-close">
-        <div class="strat-close-bar"></div>
-        <p class="strat-close-text">
-          Não é para qualquer perfil, e é exatamente por isso que
-          <strong>precisa ser feito com estratégia.</strong>
-        </p>
+      <div class="cta-inline">
+        <a href="https://wa.me/5561999012555" class="btn btn-gold" target="_blank" rel="noopener">
+          Entender Minha Viabilidade
+        </a>
       </div>
 
     </div>
@@ -1766,53 +1684,60 @@
 
 
   <!-- ==========================================
-       5. ABORDAGEM
+       5. HISTÓRICO PROFISSIONAL
   ========================================== -->
   <section class="section section-alt">
     <div class="wrap">
 
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <div class="flag-stripe"><span></span><span></span><span></span></div>
-        <p class="label" style="margin-bottom:0">Nossa abordagem</p>
+        <p class="label" style="margin-bottom:0">Seu histórico profissional</p>
       </div>
-      <h2 class="hl hl-52" style="margin-bottom:44px;max-width:760px">
-        Não analisamos o visto.<br>Analisamos o <span class="accent-green">seu caso</span>.
+      <h2 class="hl hl-52" style="margin-bottom:44px;max-width:860px">
+        Não analisamos apenas o visto. Analisamos o <span class="accent-green">seu histórico profissional</span>.
       </h2>
 
       <div class="abord-layout">
 
         <div class="abord-left">
           <p class="abord-sub">
-            Enquanto muitos tentam encaixar clientes em processos,
-            <em>nós fazemos o contrário.</em>
+            Cada perfil possui particularidades que precisam ser avaliadas estrategicamente antes da tomada de decisão.
           </p>
           <div class="abord-steps">
             <div class="abord-step">
               <span class="abord-step-num">01</span>
               <div class="abord-step-body">
-                <p class="abord-step-title">Avaliação estratégica</p>
-                <p class="abord-step-desc">Analisamos profundamente o perfil antes de qualquer decisão ou investimento.</p>
+                <p class="abord-step-title">Formação acadêmica</p>
               </div>
             </div>
             <div class="abord-step">
               <span class="abord-step-num">02</span>
               <div class="abord-step-body">
-                <p class="abord-step-title">Seleção criteriosa</p>
-                <p class="abord-step-desc">Só aceitamos casos com base real. Transparência sobre viabilidade desde o início.</p>
+                <p class="abord-step-title">Experiência profissional</p>
               </div>
             </div>
             <div class="abord-step">
               <span class="abord-step-num">03</span>
               <div class="abord-step-body">
-                <p class="abord-step-title">Construção técnica robusta</p>
-                <p class="abord-step-desc">Elaboramos o processo com rigor técnico e domínio das exigências dos EUA.</p>
+                <p class="abord-step-title">Área de atuação</p>
               </div>
             </div>
             <div class="abord-step">
               <span class="abord-step-num">04</span>
               <div class="abord-step-body">
-                <p class="abord-step-title">Atuação alinhada Brasil–EUA</p>
-                <p class="abord-step-desc">Integramos os requisitos legais dos dois países para uma jornada sem surpresas.</p>
+                <p class="abord-step-title">Capacidade de investimento</p>
+              </div>
+            </div>
+            <div class="abord-step">
+              <span class="abord-step-num">05</span>
+              <div class="abord-step-body">
+                <p class="abord-step-title">Potencial estratégico do perfil</p>
+              </div>
+            </div>
+            <div class="abord-step">
+              <span class="abord-step-num">06</span>
+              <div class="abord-step-body">
+                <p class="abord-step-title">Histórico profissional</p>
               </div>
             </div>
           </div>
@@ -1821,23 +1746,21 @@
         <div class="abord-right">
           <div class="abord-invest-card">
             <span class="usa-badge" style="margin-bottom:16px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)"><img src="https://flagcdn.com/w40/us.png" alt="EUA" class="flag-img"> Processo para os EUA</span>
-            <span class="abord-invest-label">Antes de qualquer passo</span>
+            <span class="abord-invest-label">Antes da decisão</span>
             <p class="abord-invest-desc">
-              Este não é um processo barato e não deve ser tratado como uma tentativa.
-              Por isso, analisamos profundamente o seu perfil antes de qualquer comprometimento.
+              Cada etapa do processo precisa estar alinhada ao seu histórico profissional e ao real potencial estratégico do seu perfil.
             </p>
             <div class="abord-divider"></div>
             <p class="abord-decision">
-              A decisão mais importante não é aplicar.<br>
-              É <em>saber se faz sentido aplicar</em>.
+              Processos imigratórios exigem <em>estratégia</em>, não apenas intenção.
             </p>
           </div>
 
           <div class="abord-cta-card">
             <a href="https://wa.me/5561999012555" class="btn btn-gold" style="width:100%" target="_blank" rel="noopener">
-              Agendar avaliação estratégica
+              Analisar Meu Caso
             </a>
-            <span class="abord-cta-note">Só avançamos quando existe base real para o seu caso</span>
+            <span class="abord-cta-note">Cada decisão começa com clareza sobre o seu perfil.</span>
           </div>
         </div>
 
@@ -1846,6 +1769,33 @@
     </div>
   </section>
 
+
+  <!-- ==========================================
+       6. CTA FINAL
+  ========================================== -->
+  <section class="section cta-section final-fold">
+    <div class="wrap">
+      <div class="cta-inner">
+        <h2 class="hl hl-52" style="margin-bottom:20px">
+          Seu perfil profissional realmente possui potencial para o EB2 NIW?
+        </h2>
+        <p class="cta-sub">
+          Receba uma análise estratégica sobre sua elegibilidade e entenda se o processo faz sentido para sua trajetória profissional.
+        </p>
+
+        <div class="card cta-benefits">
+          <div class="benefit"><span class="ic">✓</span><span>Processo voltado para profissionais qualificados</span></div>
+          <div class="benefit"><span class="ic">✓</span><span>Atendimento estratégico e personalizado</span></div>
+          <div class="benefit"><span class="ic">✓</span><span>Avaliação baseada em critérios técnicos</span></div>
+          <div class="benefit"><span class="ic">✓</span><span>Nem todos os perfis são elegíveis</span></div>
+        </div>
+
+        <a href="https://wa.me/5561999012555" class="btn btn-gold" target="_blank" rel="noopener">
+          Solicitar Avaliação De Elegibilidade
+        </a>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="wrap">
